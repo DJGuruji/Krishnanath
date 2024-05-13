@@ -1,8 +1,20 @@
 import React from "react";
 import Discription from "../components/Discription";
 import HomeImg from "../components/HomeImg";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    
+    if (window.location.pathname !== '/') {
+     
+      navigate('/');
+    }
+  }, [navigate]);
+
   return (
     <div className="h-screen bg-black">
       <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
