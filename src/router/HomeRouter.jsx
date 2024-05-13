@@ -35,17 +35,17 @@ const HomeRouter = () => {
                 </Link>
               </li>
               <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <Link to="about" onClick={handleItemClick}>
+                <Link to="/about" onClick={handleItemClick}>
                   About
                 </Link>
               </li>
               <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <Link to="service" onClick={handleItemClick}>
+                <Link to="/service" onClick={handleItemClick}>
                   Service
                 </Link>
               </li>
               <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <Link to="projects" onClick={handleItemClick}>
+                <Link to="/projects" onClick={handleItemClick}>
                   Projects
                 </Link>
               </li>
@@ -69,17 +69,17 @@ const HomeRouter = () => {
                     </Link>
                   </li>
                   <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <Link to="about" onClick={handleItemClick}>
+                    <Link to="/about" onClick={handleItemClick}>
                       About
                     </Link>
                   </li>
                   <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <Link to="service" onClick={handleItemClick}>
+                    <Link to="/service" onClick={handleItemClick}>
                       Service
                     </Link>
                   </li>
                   <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <Link to="projects" onClick={handleItemClick}>
+                    <Link to="/projects" onClick={handleItemClick}>
                       Projects
                     </Link>
                   </li>
