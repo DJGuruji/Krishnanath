@@ -3,7 +3,7 @@ import React from 'react';
 const Project = ({ name, description, status, githubLink }) => (
   <div className="border p-4 rounded-lg mb-4">
     <h2 className="text-xl font-semibold text-center text-yellow-300">{name}</h2>
-    <p className="text-white mb-2">{description}</p>
+    <p className="text-white mb-2 text-justify">{description}</p>
     <p className={`text-sm text-center ${status === 'completed' ? 'text-green-400' : 'text-yellow-400'}`}>{status}</p>
     <span className="flex justify-center p-5"><a href={githubLink} className=" text-blue-600 underline text-center" target="_blank" rel="noopener noreferrer">GitHub</a></span>
   </div>
