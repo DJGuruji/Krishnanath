@@ -65,8 +65,8 @@ const HomeRouter = () => {
               className="text-white mt-4 relative md:hidden mr-2"
               onClick={handleDropdown}
             >
-              <div className="w-8 h-1 bg-white m-1"></div>
-              <div className="w-7 h-1 bg-white ml-2"></div>
+              <div className="w-8 h-1 bg-white m-1 rounded-lg"></div>
+              <div className="w-7 h-1 bg-white ml-2 rounded-lg"></div>
               {/* <div className="w-6 h-1 bg-white mt-1 ml-3"></div> */}
             </button>
             {dropdown && (
