@@ -18,7 +18,7 @@ const HomeRouter = () => {
      
       navigate('/');
     }
-  }, [navigate]);
+  }, []);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
