@@ -32,8 +32,8 @@ const HomeRouter = () => {
     <>
       <nav className="bg-black h-16 border-b-2 border-slate-500">
         <div className="flex justify-between w-screen items-center">
-          <h1 className="text-yellow-300 text-2xl font-bold ml-3">
-            𝒦𝓇𝒾𝓈𝒽𝓃𝒶𝓃𝒶𝓉𝒽.𝒮
+          <h1 className="text-yellow-300 text-2xl font-bold ml-3 font-slab ">
+          Krishnanath.S
           </h1>
           <div className="w-1/2"></div>
           <div className="md:flex hidden">
@@ -67,7 +67,7 @@ const HomeRouter = () => {
             >
               <div className="w-8 h-1 bg-white m-1"></div>
               <div className="w-7 h-1 bg-white ml-2"></div>
-              <div className="w-6 h-1 bg-white mt-1 ml-3"></div>
+              {/* <div className="w-6 h-1 bg-white mt-1 ml-3"></div> */}
             </button>
             {dropdown && (
               <div className="absolute mt-4 rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300">
