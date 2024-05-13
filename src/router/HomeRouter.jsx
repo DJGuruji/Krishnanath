@@ -10,6 +10,15 @@ import { FaBars } from 'react-icons/fa';
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
+ 
+
+  useEffect(() => {
+    
+    if (window.location.pathname !== '/') {
+     
+      navigate('/');
+    }
+  }, [navigate]);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
