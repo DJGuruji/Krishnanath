@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
   return (
-    <a href={href} className="border-2 border-white rounded-full">
+    <a href={href} className="border-2 border-white rounded-full ml-4">
       <img
         src={src}
         alt={alt}

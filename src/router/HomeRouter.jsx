@@ -67,7 +67,7 @@ const HomeRouter = () => {
             >
               <div className="w-8 h-1 bg-white m-1 rounded-lg"></div>
               <div className="w-7 h-1 bg-white ml-2 rounded-lg"></div>
-              <div className="w-6 h-1 bg-white mt-1 ml-3"></div>
+              {/* <div className="w-6 h-1 bg-white mt-1 ml-3"></div> */}
             </button>
             {dropdown && (
               <div className="absolute mt-5 rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300">
