@@ -1,21 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Project = ({ name, description, status, githubLink,productionLink }) => (
+const Project = ({ name, description, status, githubLink, productionLink }) => (
   <div className="border p-4 rounded-lg mb-4">
     <h2 className="text-xl font-semibold text-center text-yellow-300">{name}</h2>
     <p className="text-white mb-2 text-justify">{description}</p>
     <p className={`text-sm text-center ${status === 'completed' ? 'text-green-400' : 'text-yellow-400'}`}>{status}</p>
-    <span className="flex justify-center p-5"><a href={githubLink} className=" text-blue-600 underline text-center" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <span className="flex justify-center p-5"><a href={githubLink} className="text-blue-600 underline text-center" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     {productionLink !== 'nil' ? (
-      <span className="flex justify-center p-5"><a href={productionLink} className=" text-blue-600 underline text-center" target="_blank" rel="noopener noreferrer">click here</a></span>
+      <span className="flex justify-center p-5"><a href={productionLink} className="text-blue-400 underline text-center" target="_blank" rel="noopener noreferrer">click here to view the web application</a></span>
     ) : (
       <span className="flex justify-center p-5 text-white">NIL</span>
     )}
   </div>
 );
 
+Project.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  githubLink: PropTypes.string.isRequired,
+  productionLink: PropTypes.string,
+};
+
+Project.defaultProps = {
+  productionLink: 'nil',
+};
+
 const ProjectsPage = () => {
- 
   const projects = [
     {
       name: 'Medical Appointment',
@@ -61,17 +73,16 @@ const ProjectsPage = () => {
     },
     {
       name: 'Calculator',
-      description: 'In my first project, I have ventured into the realm of web development by creating a simple yet functional calculator using HTML, CSS, and JavaScript. Through this endeavor, I have  delved into the fundamentals of front-end design and programming, honing my skills in crafting user interfaces and implementing logic to perform basic arithmetic operations. From addition to division, my calculator offers a seamless experience for users to perform calculations effortlessly. This project marks the beginning of my journey in web development, providing me with valuable hands-on experience and paving the way for future endeavors in the field',
+      description: 'In my first project, I have ventured into the realm of web development by creating a simple yet functional calculator using HTML, CSS, and JavaScript. Through this endeavor, I have delved into the fundamentals of front-end design and programming, honing my skills in crafting user interfaces and implementing logic to perform basic arithmetic operations. From addition to division, my calculator offers a seamless experience for users to perform calculations effortlessly. This project marks the beginning of my journey in web development, providing me with valuable hands-on experience and paving the way for future endeavors in the field',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/Calculator-js',
       productionLink: 'nil'
     },
-    
   ];
 
   return (
     <div className="h-full bg-black mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-8 text-yellow-300 text-center ">Projects</h1>
+      <h1 className="text-3xl font-bold mb-8 text-yellow-300 text-center">Projects</h1>
       {projects.map((project, index) => (
         <Project key={index} {...project} />
       ))}
