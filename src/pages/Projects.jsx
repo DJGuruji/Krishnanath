@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Project = ({ name, description, status, githubLink }) => (
+const Project = ({ name, description, status, githubLink,productionLink }) => (
   <div className="border p-4 rounded-lg mb-4">
     <h2 className="text-xl font-semibold text-center text-yellow-300">{name}</h2>
     <p className="text-white mb-2 text-justify">{description}</p>
