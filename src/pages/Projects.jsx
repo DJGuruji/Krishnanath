@@ -8,9 +8,9 @@ const Project = ({ name, description, status, githubLink, productionLink }) => (
     <p className={`text-sm text-center ${status === 'completed' ? 'text-green-400' : 'text-yellow-400'}`}>{status}</p>
     <span className="flex justify-center p-5"><a href={githubLink} className="text-blue-600 underline text-center" target="_blank" rel="noopener noreferrer">GitHub</a></span>
     {productionLink !== 'nil' ? (
-      <span className="flex justify-center p-5"><a href={productionLink} className="text-blue-400 underline text-center" target="_blank" rel="noopener noreferrer">click here to view the web application</a></span>
+      <span className="flex justify-center p-5 text-white">Visit The Web Application :<a href={productionLink} className="text-blue-400 underline text-center" target="_blank" rel="noopener noreferrer">click here</a></span>
     ) : (
-      <span className="flex justify-center p-5 text-white">NIL</span>
+      <span className="flex justify-center p-5 text-white">Visit The Web Application : <p className='underline text-blue-500'> Nil</p></span>
     )}
   </div>
 );

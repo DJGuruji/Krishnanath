@@ -1,5 +1,5 @@
 import React from 'react'
-import img from "../img/stan.png"
+import img from "../img/face.jpeg"
 
 const AboutImg = () => {
   return (
