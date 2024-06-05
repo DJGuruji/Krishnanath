@@ -28,9 +28,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black h-screen flex flex-col justify-center items-center ">
+    <div className="bg-black h-screen flex flex-col justify-center ">
     
-      <div className=" flex flex-col justify-center items-center md:mt-3 lg:mt-3 xl:mt-3 ">
+      <div className=" flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10 ">
         <Contactimg />
       </div>
       <h1 className="text-center text-yellow-300 text-xl mt-10 font-semibold">Get In Touch With Me On </h1>
