@@ -27,11 +27,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black h-screen md:flex lg:flex xl:flex justify-center items-center ">
-      <h1 className="text-center text-yellow-300 ">Get In Touch With Me </h1>
+    <div className="bg-black h-screen flex flex-col justify-center items-center ">
+    
       <div className=" flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10 ">
         <Contactimg />
       </div>
+      <h1 className="text-center text-yellow-300 text-xl mt-10">Get In Touch With Me On </h1>
       <div className="flex justify-center items-center mt-8 ">
         <ImagLink
           src={git}
