@@ -48,7 +48,7 @@ const AboutDiscription = () => {
       MERN stack, Django, MySQL,PSQL,JavaScript,AWS,GIT, GitHub 
     </p>
    </div>
-      <div className='flex justify-center items-center mt-8'>
+      <div className='flex justify-center items-center mt-8 '>
         <ImagLink src={git} alt="GitHub" href="https://github.com" isHovered={isHovered} handleHover={handleHover} />
         <ImagLink src={insta} alt="Instagram" href="https://instagram.com" isHovered={isHovered} handleHover={handleHover} />
         <ImagLink src={link} alt="LinkedIn" href="https://linkedin.com" isHovered={isHovered} handleHover={handleHover} />
