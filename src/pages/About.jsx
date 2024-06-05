@@ -7,7 +7,7 @@ import AboutDiscription from '../components/AboutDiscription'
 
 const About = () => {
   return (
-    <div className='h-screen text-white bg-black'>
+    <div className='h-screen text-white bg-black pb-10'>
        <div className=" md:flex lg:flex xl:flex justify-around">
      <div className=" flex flex-col justify-center items-center pt-10">
         < AboutImg />

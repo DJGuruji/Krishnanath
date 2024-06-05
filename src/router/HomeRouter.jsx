@@ -34,7 +34,7 @@ const HomeRouter = () => {
         <div className="flex justify-between w-screen items-center">
           <h1 className="text-yellow-300 text-2xl font-bold ml-3 font-slab ">
           <Link to="/" onClick={handleItemClick}>
-          亗 Krishnanath.S
+          亗Krishnanath.S
           </Link>
           </h1>
           <div className="w-1/2"></div>
@@ -72,7 +72,7 @@ const HomeRouter = () => {
               {/* <div className="w-6 h-1 bg-white mt-1 ml-3"></div> */}
             </button>
             {dropdown && (
-              <div className="absolute mt-6 rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300">
+              <div className="absolute mt-5 rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300">
                 <ul className="flex flex-col text-lg mr-4">
                   <li className="mt-2 p-2 text-white font-light hover:font-bold text-center ">
                     <Link to="/" onClick={handleItemClick}>
