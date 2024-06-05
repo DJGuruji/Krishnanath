@@ -1,8 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import git from "../img/social/git.png";
 import insta from "../img/social/insta.png";
 import link from "../img/social/linkedin.png";
 import mail from "../img/social/mail.png";
+import Contactimg from "../components/Contactimg";
 
 const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
   return (
@@ -19,15 +20,18 @@ const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
 };
 
 const Contact = () => {
+  const [isHovered, setIsHovered] = useState(false);
 
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleHover = () => {
-      setIsHovered(!isHovered);
-    };
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
 
   return (
-    <div className="bg-black h-screen flex justify-center items-center ">
+    <div className="bg-black h-screen md:flex lg:flex xl:flex justify-center items-center ">
+      <h1 className="text-center text-yellow-300 ">Get In Touch With Me </h1>
+      <div className=" flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10 ">
+        <Contactimg />
+      </div>
       <div className="flex justify-center items-center mt-8 ">
         <ImagLink
           src={git}
