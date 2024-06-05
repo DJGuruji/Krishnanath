@@ -12,6 +12,7 @@ const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
           <img
             src={src}
             alt={alt}
+            target="_blank"
             className={`rounded-full ${
               isHovered ? "w-11 h-11" : "w-10 h-10"
             }`}

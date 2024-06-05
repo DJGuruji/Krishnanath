@@ -11,6 +11,7 @@ const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
       <img
         src={src}
         alt={alt}
+        target="_blank"
         className={`rounded-full ${isHovered ? "w-11 h-11" : "w-10 h-10"}`}
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
@@ -29,10 +30,10 @@ const Contact = () => {
   return (
     <div className="bg-black h-screen flex flex-col justify-center items-center ">
     
-      <div className=" flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10 ">
+      <div className=" flex flex-col justify-center items-center md:mt-3 lg:mt-3 xl:mt-3 ">
         <Contactimg />
       </div>
-      <h1 className="text-center text-yellow-300 text-xl mt-10">Get In Touch With Me On </h1>
+      <h1 className="text-center text-yellow-300 text-xl mt-10 font-semibold">Get In Touch With Me On </h1>
       <div className="flex justify-center items-center mt-8 ">
         <ImagLink
           src={git}
