@@ -5,7 +5,7 @@ import About from "../pages/About";
 import Service from "../pages/Service";
 import Projects from "../pages/Projects";
 import NotFound from "../pages/PNF";
-import { FaBars } from 'react-icons/fa';
+import Contact from "../pages/Contact";
 
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -60,6 +60,11 @@ const HomeRouter = () => {
                   Projects
                 </Link>
               </li>
+              <li className="p-2 mt-2 text-white font-light hover:font-bold">
+                <Link to="/contact" onClick={handleItemClick}>
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -94,6 +99,11 @@ const HomeRouter = () => {
                       Projects
                     </Link>
                   </li>
+                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
+                    <Link to="/contact" onClick={handleItemClick}>
+                      Contact
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
@@ -105,6 +115,7 @@ const HomeRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
