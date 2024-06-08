@@ -69,14 +69,14 @@ const ProjectsPage = () => {
       description: 'Enter the realm of efficient complaint resolution with our online portal, meticulously constructed using HTML5, Tailwind CSS, and JavaScript. Designed to streamline the complaint handling process, our platform offers comprehensive features tailored for administrators, including settings management and branch addition functionalities. Administrators can effortlessly navigate through options such as adding branches, configuring settings, and more, ensuring smooth operation and customization of the portal. With intuitive design and seamless functionality, our platform empowers administrators to efficiently manage complaints and deliver prompt resolutions. Experience the pinnacle of complaint management efficiency with our online portal, built to simplify administrative tasks and enhance user satisfaction.',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/Complaint-portal',
-      productionLink: 'nil'
+      productionLink: 'https://djguruji.github.io/Complaint-portal/dist/'
     },
     {
-      name: 'Calculator',
+      name: 'Calculato-JS',
       description: 'In my first project, I have ventured into the realm of web development by creating a simple yet functional calculator using HTML, CSS, and JavaScript. Through this endeavor, I have delved into the fundamentals of front-end design and programming, honing my skills in crafting user interfaces and implementing logic to perform basic arithmetic operations. From addition to division, my calculator offers a seamless experience for users to perform calculations effortlessly. This project marks the beginning of my journey in web development, providing me with valuable hands-on experience and paving the way for future endeavors in the field',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/Calculator-js',
-      productionLink: 'nil'
+      productionLink: 'https://djguruji.github.io/Calculator-js/'
     },
   ];
 

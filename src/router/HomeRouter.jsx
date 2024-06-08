@@ -34,7 +34,7 @@ const HomeRouter = () => {
         <div className="flex justify-between w-screen items-center">
           <h1 className="text-yellow-300 text-2xl font-bold ml-3 font-slab ">
           <Link to="/" onClick={handleItemClick}>
-          亗Krishnanath.S
+          Krishnanath.S
           </Link>
           </h1>
           <div className="w-1/2"></div>
