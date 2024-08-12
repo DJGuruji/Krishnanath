@@ -37,6 +37,13 @@ const ProjectsPage = () => {
       productionLink: 'nil'
     },
     {
+      name: 'Password Generator',
+      description: 'This project is a Password Generator web application built with React and styled using Tailwind CSS, designed to provide users with a simple yet powerful tool for creating secure passwords. The application allows users to customize the password generation process by specifying the length and choosing whether to include uppercase letters, lowercase letters, numbers, and symbols. With a dynamic and responsive interface, the password is generated in real-time based on the selected criteria, and a loading state provides visual feedback during the process. Once the password is generated, users can easily copy it to their clipboard with a single click, with a confirmation message indicating the success of the action. The sleek and modern design, powered by Tailwind CSS, ensures a clean and intuitive user experience, making this tool both functional and visually appealing across various devices',
+      status: 'completed',
+      githubLink: 'https://github.com/DJGuruji/PasswordGenerator',
+      productionLink: 'https://djguruji.github.io/PasswordGenerator'
+    },
+    {
       name: 'Entrance React',
       description: 'Embark on your online entrance exam journey where knowledge meets opportunity. Our platform, meticulously crafted using React, offers a seamless experience to aspiring candidates. With each question, delve into a world of choices, as you select from four meticulously curated options. But beware, time is of the essence, with a countdown timer ticking away 1.5 hours of opportunity. Once the clock runs out, the site gracefully halts, revealing the culmination of your efforts. Witness your mastery unfold as your marks in physics, chemistry, and mathematics materialize before your eyes. It is not just an exam it is a gateway to your future.',
       status: 'completed',
