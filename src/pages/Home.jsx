@@ -12,7 +12,7 @@ const Home = () => {
         <div className="pt-10 flex  justify-center items-center pl-5 ">
           <HomeImg></HomeImg>
         </div>
-        <div className="pb-4 flex flex-col justify-center items-center">
+        <div className="pb-5 flex flex-col justify-center items-center">
           <Discription></Discription>
         </div>
       </div>
