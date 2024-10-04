@@ -14,7 +14,7 @@ const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
       className="border-2 border-white rounded-full ml-4"
       target="_blank"
       rel="noopener noreferrer"
-      data-aos="zoom-in" 
+     
     >
       <img
         src={src}
