@@ -18,7 +18,7 @@ const HomeRouter = () => {
 
   useEffect(() => {
     if (window.location.pathname !== "/") {
-      navigate("/");
+      navigate("/Krishnanath/");
     }
   }, []);
 
