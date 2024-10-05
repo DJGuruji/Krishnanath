@@ -148,7 +148,7 @@ const HomeRouter = () => {
                       Projects
                     </NavLink>
                   </li>
-                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
+                  <li className="p-2 mt-2 mr-10 text-white font-light hover:font-bold text-center">
                     <NavLink 
                       to="/contact" 
                       onClick={handleItemClick} 
