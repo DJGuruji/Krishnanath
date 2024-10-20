@@ -51,7 +51,7 @@ const Discription = () => {
         </h2>
         <h1 className="text-2xl font-sans " data-aos="fade-up">I Am Krishnanath S</h1>
         <p className="pt-3 text-lg text-justify " data-aos="fade-up">
-          I'm a web developer with extensive experience for over 4 years. My
+          I'm a Full Stack web developer with extensive experience for over 4 years. My
           expertise is to create and develop websites in MERN Stack, Django, and
           Fast API.
         </p>
