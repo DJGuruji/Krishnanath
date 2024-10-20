@@ -16,11 +16,11 @@ const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (window.location.pathname !== "/") {
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.location.pathname !== "/") {
+  //     navigate("/");
+  //   }
+  // }, []);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
