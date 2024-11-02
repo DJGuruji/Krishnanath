@@ -64,7 +64,7 @@ const ProjectsPage = () => {
       description: 'Our complaint management system is built with React and Tailwind CSS, offering separate interfaces for users and administrators. Users navigate a streamlined portal for lodging complaints and tracking their status, while administrators access a dedicated platform for efficient management and resolution. With user-friendly design and intuitive functionality, our system ensures seamless communication and swift action, enhancing the experience for both users and administrators.',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/cmsfront',
-      productionLink: 'https:cmsreact.deno.dev'
+      productionLink: 'https://cmsreact.deno.dev'
     },
     {
       name: 'Complaint Portal',
