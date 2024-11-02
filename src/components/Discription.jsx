@@ -55,14 +55,15 @@ const Discription = () => {
           expertise is to create and develop websites in MERN Stack, Django,Java Spring Boot, Next JS, Nest JS,
           and Fast API and Android App Development in Flutter and React Native.
         </p>
-      </div>
-  
-      <span className='flex justify-center items-center mt-10'data-aos="fade-up" >
+        <span className=' mt-5  pb-5 flex justify-center items-center mt-10'data-aos="fade-up" >
       <ImagLink src={git} alt="GitHub" href="https://github.com"  isHovered={isHovered} handleHover={handleHover} />
       <ImagLink src={insta} alt="Instagram" href="https://instagram.com" isHovered={isHovered} handleHover={handleHover} />
       <ImagLink src={link} alt="LinkedIn" href="https://linkedin.com" isHovered={isHovered} handleHover={handleHover} />
       <ImagLink src={mail} alt="Email" href="mailto:example@example.com" isHovered={isHovered} handleHover={handleHover} />
       </span>
+      </div>
+  
+    
     </>
   );
 };

@@ -13,7 +13,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="h-screen text-white bg-black">
+    <div className="h-[100%] md:h-[100vh] lg:h-[100vh] xl:h-[100vh] text-white bg-black">
       <div className="md:flex lg:flex xl:flex justify-around">
       
         <div
