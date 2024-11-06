@@ -17,7 +17,7 @@ const Skills = () => {
     <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
     
       <div className="pt-10 flex  justify-center items-center pl-5 ">
-      <AboutImg />
+      {/* <AboutImg /> */}
       </div>
       <div className="pb-5 mt-10 md:mt-20 lg:mt-20 xl:mt-20 flex flex-col justify-center items-center">
       <SkillDiscription />
