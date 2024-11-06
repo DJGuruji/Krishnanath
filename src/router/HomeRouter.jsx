@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Service from "../pages/Service";
 import Projects from "../pages/Projects";
+import Skills from "../pages/Skills";
 import NotFound from "../pages/PNF";
 import Contact from "../pages/Contact";
 import { FaHome } from "react-icons/fa";
@@ -11,6 +12,7 @@ import { FaFileAlt } from "react-icons/fa";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { FaDiagramProject } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
+import { GiSkills } from "react-icons/gi";
 
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -32,7 +34,7 @@ const HomeRouter = () => {
 
   return (
     <>
-      <nav className="bg-black h-16 border-b-2 border-slate-500 relative ">
+      <nav className="bg-black h-16 border-b-2 border-slate-500 relative w-full">
         <div className="flex justify-between w-screen items-center">
           <h1 className="text-yellow-300 text-2xl font-bold ml-3 font-slab">
             <NavLink
@@ -60,7 +62,7 @@ const HomeRouter = () => {
                   Home
                 </NavLink>
               </li>
-              <li className="p-2 mt-2 text-white font-light hover:font-bold">
+              <li className="mt-2 p-2 text-white font-light hover:font-bold">
                 <NavLink
                   to="/about"
                   onClick={handleItemClick}
@@ -70,6 +72,18 @@ const HomeRouter = () => {
                 >
                   <FaFileAlt className="m-1" />
                   About
+                </NavLink>
+              </li>
+              <li className="p-2 mt-2 text-white font-light hover:font-bold">
+                <NavLink
+                  to="/skills"
+                  onClick={handleItemClick}
+                  className={({ isActive }) =>
+                    isActive ? "flex underline font-bold" : "flex"
+                  }
+                >
+                  <GiSkills className="m-1" />
+                  Skills
                 </NavLink>
               </li>
               <li className="p-2 mt-2 text-white font-light hover:font-bold">
@@ -150,6 +164,18 @@ const HomeRouter = () => {
                   </li>
                   <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
                     <NavLink
+                      to="/Skills"
+                      onClick={handleItemClick}
+                      className={({ isActive }) =>
+                        isActive ? "flex underline font-bold" : "flex"
+                      }
+                    >
+                      <GiSkills className="m-1" />
+                      Skills
+                    </NavLink>
+                  </li>
+                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
+                    <NavLink
                       to="/service"
                       onClick={handleItemClick}
                       className={({ isActive }) =>
@@ -193,6 +219,7 @@ const HomeRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
         <Route path="/service" element={<Service />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />

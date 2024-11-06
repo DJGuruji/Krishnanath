@@ -45,7 +45,7 @@ const Discription = () => {
     
   return (
     <>
-      <div className="pt-20 pl-10 bg-black text-white px-5 md:w-1/2 lg:w-1/2 xl:w-1/2 " >
+      <div className="pt-20 pl-10 bg-black text-white px-5 " >
         <h2 className="font-sans text-xl font-semibold text-yellow-300" data-aos="fade-up">
           Hello!
         </h2>

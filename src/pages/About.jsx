@@ -7,26 +7,18 @@ import "aos/dist/aos.css";
 const About = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true,   
+      duration: 1000,
+      once: true,
     });
   }, []);
 
   return (
-    <div className="h-[100%] md:h-[100vh] lg:h-[100vh] xl:h-[100vh] text-white bg-black">
-      <div className="md:flex lg:flex xl:flex justify-around">
-      
-        <div
-          className="flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10"
-          data-aos="fade-right"
-        >
+    <div className="h-[100vh] bg-black">
+      <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
+        <div className="pt-10 flex  justify-center items-center pl-5 ">
           <AboutImg />
         </div>
-
-        <div
-          className="pt-10 flex flex-col justify-center items-center"
-          data-aos="fade-left"
-        >
+        <div className="pb-5 mt-10 flex flex-col justify-center items-center">
           <AboutDiscription />
         </div>
       </div>

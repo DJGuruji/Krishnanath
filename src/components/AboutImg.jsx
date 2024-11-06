@@ -14,7 +14,7 @@ const AboutImg = () => {
 
   return (
     <div>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-s flex justify-center items-center">
         <img
           src={img}
           alt="face"
