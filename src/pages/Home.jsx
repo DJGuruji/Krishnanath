@@ -2,11 +2,13 @@ import React from "react";
 import Discription from "../components/Discription";
 import HomeImg from "../components/HomeImg";
 
+import "aos/dist/aos.css";
+
 
 const Home = () => {
 
   return (
-    <div className="h-[100vh] bg-black">
+    <div className="h-[100vh] bg-black" data-aos="fade-up">
       <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
       
         <div className="pt-10 flex  justify-center items-center pl-5 ">

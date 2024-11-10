@@ -120,7 +120,7 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <div className="h-full bg-black mx-auto p-8">
+    <div className="h-full bg-black mx-auto p-8" data-aos="fade-up">
       <h1 className="text-3xl font-bold mb-8 text-yellow-300 text-center" data-aos="fade-down">
       
         Projects

@@ -53,7 +53,7 @@ const Discription = () => {
         <p className="pt-3 text-lg text-justify " data-aos="fade-up">
           I'm a Full Stack web developer with extensive experience for over 4 years. My
           expertise is to create and develop websites in MERN Stack, Django,Java Spring Boot, Next JS, Nest JS,
-          and Fast API and Android App Development in Flutter and React Native.
+          and Fast API and Android App Development using Flutter and React Native.
         </p>
         <span className=' mt-5  pb-5 flex justify-center items-center mt-10'data-aos="fade-up" >
       <ImagLink src={git} alt="GitHub" href="https://github.com"  isHovered={isHovered} handleHover={handleHover} />
