@@ -33,7 +33,8 @@ const Contact = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
+      duration: 2000, 
+      easing: "ease-in-out",
       once: true,     
     });
   }, []);
@@ -43,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black h-screen flex flex-col justify-center" data-aos="fade-up">
+    <div className="bg-black h-screen flex flex-col justify-center" >
     
       <div
         className="flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10"
@@ -57,7 +58,7 @@ const Contact = () => {
       >
         Get In Touch With Me On
       </h1>
-      <div className="flex justify-center items-center mt-8">
+      <div className="flex justify-center items-center mt-8" >
    
         <ImagLink
           src={git}

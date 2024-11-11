@@ -114,13 +114,14 @@ const ProjectsPage = () => {
  
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 1500,
+      easing: "ease-in-out",
       offset: 100,
     });
   }, []);
 
   return (
-    <div className="h-full bg-black mx-auto p-8" data-aos="fade-up">
+    <div className="h-full bg-black mx-auto p-8" >
       <h1 className="text-3xl font-bold mb-8 text-yellow-300 text-center" data-aos="fade-down">
       
         Projects

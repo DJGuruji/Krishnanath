@@ -19,7 +19,7 @@ const AboutImg = () => {
           src={img}
           alt="face"
           className="border-2 border-yellow-300 w-44 h-58 rounded-sm mt-10"
-          data-aos="zoom-in" 
+          data-aos="flip-right" 
         />
         
       </div>

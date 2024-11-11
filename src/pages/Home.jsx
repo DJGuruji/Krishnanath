@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 const Home = () => {
 
   return (
-    <div className="h-[100vh] bg-black" data-aos="fade-up">
+    <div className="h-[100vh] bg-black" >
       <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
       
         <div className="pt-10 flex  justify-center items-center pl-5 ">

@@ -13,7 +13,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] bg-black" data-aos="fade-up">
+    <div className="h-[100vh] bg-black">
      
     <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
     

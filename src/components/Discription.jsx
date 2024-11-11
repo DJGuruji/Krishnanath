@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
+      duration: 2000, 
       easing: "ease-in-out",
       once: true, 
     });

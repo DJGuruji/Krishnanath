@@ -6,17 +6,18 @@ const ServicesPage = () => {
  
   useEffect(() => {
     AOS.init({
-      duration: 800, 
+      duration: 1500, 
+      easing: "ease-in-out",
       offset: 100, 
     });
   }, []);
 
   return (
-    <div className="h-full bg-black text-white" data-aos="fade-up">
+    <div className="h-full bg-black text-white">
       <h1 className="text-3xl font-bold text-yellow-300 text-center p-5" data-aos="fade-down">
         Services
       </h1>
-      <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
         <div className="border p-4 rounded-lg transform hover:scale-105 transition-transform duration-300" data-aos="fade-up">
           <dt className="text-lg font-semibold mb-2 text-center text-yellow-300">Web Development</dt>
           <dd className="text-justify">
@@ -71,7 +72,7 @@ const ServicesPage = () => {
             From automating deployments to optimizing infrastructure scalability, I provide DevOps services to streamline your development workflows and improve your application's reliability.
           </dd>
         </div>
-      </dl>
+      </div>
     </div>
   );
 };
