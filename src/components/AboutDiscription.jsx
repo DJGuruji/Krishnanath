@@ -13,7 +13,7 @@ const AboutDiscription = () => {
 
   return (
     <>
-      <div className=" border-2 border-yellow-300 p-2 bg-black rounded-md " data-aos="slide-left">
+      <div className=" border-2 border-yellow-300 p-2 bg-black rounded-md " data-aos="fade-up">
         <p className="flex p-1 text-lg text-white" >
           <h1 className="text-yellow-300 mr-1 text-lg">Degree:</h1>
           Btech Computer Science And Engineering (2021-2025)

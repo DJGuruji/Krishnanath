@@ -1,16 +1,10 @@
 import React, { useEffect } from "react";
 import AboutDiscription from "../components/AboutDiscription";
 import AboutImg from "../components/AboutImg";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+  
 
   return (
     <div className="h-[100vh] bg-black" >
