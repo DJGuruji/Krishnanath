@@ -48,13 +48,13 @@ const Contact = () => {
     
       <div
         className="flex flex-col justify-center items-center md:mt-10 lg:mt-10 xl:mt-10"
-        data-aos="fade-down" 
+        data-aos="fade-up" 
       >
         <Contactimg />
       </div>
       <h1
         className="text-center text-yellow-300 text-xl mt-10 font-semibold"
-        data-aos="flip-left" 
+        data-aos="fade-up" 
       >
         Get In Touch With Me On
       </h1>
