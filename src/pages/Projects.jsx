@@ -45,6 +45,13 @@ Project.defaultProps = {
 const ProjectsPage = () => {
   const projects = [
     {
+      name: 'Vyuha',
+      description: '**Vyuha** is a MERN stack project designed for seamless ticket booking for college day events, specifically catering to alumni and current students. The application provides a user-friendly interface to browse events, book tickets, and manage reservations, streamlining the booking process for college gatherings.',
+      status: 'completed',
+      githubLink: 'https://github.com/DJGuruji/vyuha',
+      productionLink: 'https://vyuha.deno.dev'
+    },
+    {
       name: 'Medical Appointment',
       description: 'This is a straightforward medical appointment system built using Python Django. It incorporates user authentication, an appointment booking form, and databases for doctors and related information stored in PostgreSQL',
       status: 'completed',
