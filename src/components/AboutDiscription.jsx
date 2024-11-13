@@ -13,21 +13,29 @@ const AboutDiscription = () => {
 
   return (
     <>
-      <div className=" border-2 border-yellow-300 p-2 bg-black rounded-md " data-aos="fade-up">
-        <p className="flex p-1 text-lg text-white" >
-          <h1 className="text-yellow-300 mr-1 text-lg">Degree:</h1>
-          Btech Computer Science And Engineering (2021-2025)
-        </p>
-        <p className="flex p-1 text-lg text-white" data-aos="fade-up" data-aos-delay="100">
-          <h1 className="text-yellow-300 mr-1 text-lg">College:</h1>
-          Vidya Academy Of Science And Technology Technical Campus, Kilimanoor
-        </p>
-        <p className="flex p-1 text-lg text-white" data-aos="fade-up" data-aos-delay="200">
-          <h1 className="text-yellow-300 mr-1 text-lg">Language:</h1>
-          Malayalam, English
-        </p>
-      
-      </div>
+    <div className="border-2 border-yellow-300 p-4 bg-black rounded-md" data-aos="fade-up">
+  <table className="table-auto w-full text-white">
+    <tbody>
+      <tr className="p-1" data-aos="fade-up">
+        <td className="text-yellow-300 text-lg font-semibold">Degree</td>
+        <td className="text-lg">: B.Tech in Computer Science and Engineering (2021-2025)</td>
+      </tr>
+      <tr className="p-1" data-aos="fade-up" data-aos-delay="100">
+        <td className="text-yellow-300 text-lg font-semibold">College</td>
+        <td className="text-lg">: Vidya Academy Of Science And Technology Technical Campus, Kilimanoor</td>
+      </tr>
+      <tr className="p-1" data-aos="fade-up" data-aos-delay="200">
+        <td className="text-yellow-300 text-lg font-semibold mr-1">CGPA</td>
+        <td className="text-lg">: 8.3</td>
+      </tr>
+      <tr className="p-1" data-aos="fade-up" data-aos-delay="300">
+        <td className="text-yellow-300 text-lg font-semibold ">Languages</td>
+        <td className="text-lg ">: Malayalam, English</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
      
     </>
   );

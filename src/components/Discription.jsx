@@ -51,9 +51,7 @@ const Discription = () => {
         </h2>
         <h1 className="text-2xl font-sans " data-aos="fade-up">I Am Krishnanath S</h1>
         <p className="pt-3 text-lg text-justify " data-aos="fade-up">
-          I'm a Full Stack web developer with extensive experience for over 4 years. My
-          expertise is to create and develop websites in MERN Stack, Django,Java Spring Boot, Next JS, Nest JS,
-          and Fast API and Android App Development using Flutter and React Native.
+        I'm a Full Stack web developer with extensive experience in building and developing websites using the MERN stack, Django, Java Spring Boot, Next.js, Nest.js, and FastAPI, as well as Android app development with Flutter and React Native
         </p>
         <span className=' mt-5  pb-5 flex justify-center items-center mt-10'data-aos="fade-up" >
       <ImagLink src={git} alt="GitHub" href="https://github.com"  isHovered={isHovered} handleHover={handleHover} />

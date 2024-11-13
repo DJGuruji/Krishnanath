@@ -13,7 +13,7 @@ const SkillDiscription = () => {
 
   return (
     <div className="border-2 border-yellow-300 bg-black mt-4 p-4 rounded-lg">
-      <table className="table-auto w-full text-white">
+      <table className="table-auto w-full text-white" >
         {/* <thead>
           <tr>
             <th className="text-left text-yellow-300 p-2">Category</th>
