@@ -13,6 +13,7 @@ import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { FaDiagramProject } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import { GiSkills } from "react-icons/gi";
+import logo from "../img/logo.jpeg"
 
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -126,16 +127,17 @@ const HomeRouter = () => {
           </div>
           <div>
             <button
-              className="text-white mt-4 relative md:hidden mr-2"
+              className="text-white mt-3 relative md:hidden mr-2"
               onClick={handleDropdown}
             >
-              <div className="w-8 h-1 bg-white m-1 rounded-lg"></div>
-              <div className="w-7 h-1 bg-white ml-2 rounded-lg"></div>
+               {/* <div className="w-8 h-1 bg-white m-1 rounded-lg"></div>
+               <div className="w-7 h-1 bg-white ml-2 rounded-lg"></div> */}
+              <img src={logo} className="w-12 h-12 rounded-full " alt="logo" />
             </button>
             {dropdown && (
               <div
                 className="absolute mt-5 rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300 z-50"
-                style={{ zIndex: 50 }}
+                style={{ zIndex: 70 }}
               >
                 <ul className="flex flex-col text-lg mr-4">
                   <li className="mt-2 p-2 text-white font-light hover:font-bold text-center">
