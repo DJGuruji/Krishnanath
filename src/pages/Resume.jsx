@@ -25,7 +25,7 @@ const Resume = () => {
     <div className="p-4 h-screen bg-black text-white flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-6 text-yellow-300 ">Resume</h1>
 
-      <div className="space-x-4">
+      <div className="space-x-4 flex">
         {/* Preview Button */}
         <button
           onClick={handlePreview}

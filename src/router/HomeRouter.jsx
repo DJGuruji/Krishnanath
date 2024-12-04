@@ -14,7 +14,7 @@ import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { FaDiagramProject } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import { GiSkills } from "react-icons/gi";
-
+import { BiSolidUserBadge } from "react-icons/bi";
 
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
@@ -132,7 +132,7 @@ const HomeRouter = () => {
                     isActive ? "flex underline font-bold" : "flex"
                   }
                 >
-                  <IoMdContact className="m-1 text-xl" />
+                  <BiSolidUserBadge className="m-1 text-xl" />
                   Resume
                 </NavLink>
               </li>
@@ -233,7 +233,7 @@ const HomeRouter = () => {
                         isActive ? "flex underline font-bold" : "flex"
                       }
                     >
-                      <IoMdContact className="m-1 text-xl" />
+                      <BiSolidUserBadge className="m-1 text-xl" />
                       Resume
                     </NavLink>
                   </li>
