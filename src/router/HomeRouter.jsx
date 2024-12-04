@@ -6,6 +6,7 @@ import Service from "../pages/Service";
 import Projects from "../pages/Projects";
 import Skills from "../pages/Skills";
 import NotFound from "../pages/PNF";
+import Resume from "../pages/Resume";
 import Contact from "../pages/Contact";
 import { FaHome } from "react-icons/fa";
 import { FaFileAlt } from "react-icons/fa";
@@ -123,6 +124,18 @@ const HomeRouter = () => {
                   Contact
                 </NavLink>
               </li>
+              <li className="p-2 mt-2 text-white font-light hover:font-bold">
+                <NavLink
+                  to="/resume"
+                  onClick={handleItemClick}
+                  className={({ isActive }) =>
+                    isActive ? "flex underline font-bold" : "flex"
+                  }
+                >
+                  <IoMdContact className="m-1 text-xl" />
+                  Resume
+                </NavLink>
+              </li>
             </ul>
           </div>
           <div>
@@ -212,6 +225,18 @@ const HomeRouter = () => {
                       Contact
                     </NavLink>
                   </li>
+                  <li className="p-2 mt-2 mr-10 text-white font-light hover:font-bold text-center">
+                    <NavLink
+                      to="/resume"
+                      onClick={handleItemClick}
+                      className={({ isActive }) =>
+                        isActive ? "flex underline font-bold" : "flex"
+                      }
+                    >
+                      <IoMdContact className="m-1 text-xl" />
+                      Resume
+                    </NavLink>
+                  </li>
                 </ul>
               </div>
             )}
@@ -225,6 +250,7 @@ const HomeRouter = () => {
         <Route path="/service" element={<Service />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
