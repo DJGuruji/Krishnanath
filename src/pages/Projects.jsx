@@ -49,7 +49,7 @@ const ProjectsPage = () => {
       description: 'Experience the epitome of online shopping with our state-of-the-art e-commerce platform, meticulously crafted with React JS Tailwind CSS. Seamlessly blending functionality and aesthetics, our website offers a seamless browsing and purchasing experience for customers. With secure payment options seamlessly integrated into the checkout process, shopping has never been more convenient. Powered by React JS our platform ensures swift and secure transactions, while Tailwind CSS enhances the visual appeal with modern and responsive design elements providing a delightful shopping experience. Dive into a world of convenience and sophistication with our e-commerce website, designed to elevate your online shopping journey.',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/Ecommerce',
-      productionLink: 'https:gcart.deno.dev'
+      productionLink: 'https://gcart.deno.dev'
     },
     {
       name: 'Vyuha',

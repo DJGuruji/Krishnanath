@@ -17,20 +17,20 @@ const AboutDiscription = () => {
   <table className="table-auto w-full text-white">
     <tbody>
       <tr className="p-1" data-aos="fade-up">
-        <td className="text-yellow-300 text-lg font-semibold">Degree</td>
-        <td className="text-lg">: B.Tech in Computer Science and Engineering (2021-2025)</td>
+        <td className="text-yellow-300 font-semibold">Degree</td>
+        <td className="">: B.Tech in Computer Science and Engineering (2021-2025)</td>
       </tr>
       <tr className="p-1" data-aos="fade-up" data-aos-delay="100">
-        <td className="text-yellow-300 text-lg font-semibold">College</td>
-        <td className="text-lg">: Vidya Academy Of Science And Technology Technical Campus, Kilimanoor</td>
+        <td className="text-yellow-300 font-semibold">College</td>
+        <td className="">: Vidya Academy Of Science And Technology Technical Campus, Kilimanoor</td>
       </tr>
       <tr className="p-1" data-aos="fade-up" data-aos-delay="200">
-        <td className="text-yellow-300 text-lg font-semibold mr-1">CGPA</td>
-        <td className="text-lg">: 8.3</td>
+        <td className="text-yellow-300 font-semibold mr-1">CGPA</td>
+        <td className="">: 8.3</td>
       </tr>
       <tr className="p-1" data-aos="fade-up" data-aos-delay="300">
-        <td className="text-yellow-300 text-lg font-semibold ">Languages</td>
-        <td className="text-lg ">: Malayalam, English</td>
+        <td className="text-yellow-300 font-semibold ">Languages</td>
+        <td className=" ">: Malayalam, English</td>
       </tr>
     </tbody>
   </table>
