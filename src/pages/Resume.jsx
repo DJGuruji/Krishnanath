@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 
 const Resume = () => {
-  // URL to the predefined PDF file
-  const pdfUrl = "/KRISHNANATHS_Resume.pdf";
+  
+  const pdfUrl = "/Krishnanaths_Resume.pdf";
 
   const [showPreview, setShowPreview] = useState(false);
 
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "KRISHNANATHS_Resume.pdf";
+    link.download = "Krishnanaths_Resume.pdf";
     link.click();
   };
 
   const handlePreview = () => {
-    setShowPreview(true); // Show the iframe on clicking Preview
+    setShowPreview(true); 
   };
 
   const handleClosePreview = () => {
-    setShowPreview(false); // Hide the iframe on clicking Close
+    setShowPreview(false); 
   };
 
   return (
