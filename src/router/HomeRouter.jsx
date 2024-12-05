@@ -7,12 +7,10 @@ import Projects from "../pages/Projects";
 import Skills from "../pages/Skills";
 import NotFound from "../pages/PNF";
 import Resume from "../pages/Resume";
-import Contact from "../pages/Contact";
 import { FaHome } from "react-icons/fa";
 import { FaFileAlt } from "react-icons/fa";
 import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { FaDiagramProject } from "react-icons/fa6";
-import { IoMdContact } from "react-icons/io";
 import { GiSkills } from "react-icons/gi";
 import { BiSolidUserBadge } from "react-icons/bi";
 
@@ -97,7 +95,7 @@ const HomeRouter = () => {
                   }
                 >
                   <MdOutlineMiscellaneousServices className="m-1" />
-                  Service
+                  Services
                 </NavLink>
               </li>
               <li className="p-2 mt-2 text-white font-light hover:font-bold">
@@ -112,18 +110,7 @@ const HomeRouter = () => {
                   Projects
                 </NavLink>
               </li>
-              <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/contact"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold" : "flex"
-                  }
-                >
-                  <IoMdContact className="m-1 text-xl" />
-                  Contact
-                </NavLink>
-              </li>
+       
               <li className="p-2 mt-2 text-white font-light hover:font-bold">
                 <NavLink
                   to="/resume"
@@ -198,7 +185,7 @@ const HomeRouter = () => {
                       }
                     >
                       <MdOutlineMiscellaneousServices className="m-1" />
-                      Service
+                      Services
                     </NavLink>
                   </li>
                   <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
@@ -213,18 +200,7 @@ const HomeRouter = () => {
                       Projects
                     </NavLink>
                   </li>
-                  <li className="p-2 mt-2 mr-10 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/contact"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <IoMdContact className="m-1 text-xl" />
-                      Contact
-                    </NavLink>
-                  </li>
+            
                   <li className="p-2 mt-2 mr-10 text-white font-light hover:font-bold text-center">
                     <NavLink
                       to="/resume"
@@ -249,7 +225,6 @@ const HomeRouter = () => {
         <Route path="/skills" element={<Skills />} />
         <Route path="/service" element={<Service />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

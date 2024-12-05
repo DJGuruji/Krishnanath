@@ -25,19 +25,19 @@ const About = () => {
     <div className="h-full bg-black">
       {/* Fixed Navigation */}
       <div className="fixed top-12 left-0 w-full text-white bg-opacity-1 shadow-md flex  md:justify-around lg:justify-around xl:justify-around py-4 z-50">
-        <button
+        <button data-aos="zoom-in"
           className=" flex ml-1 bg-black  font-bold hover:bg-slate-800 px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
           onClick={() => scrollToSection(degreeRef)}
         ><IoSchool className="m-1"></IoSchool>
           Degree
         </button>
-        <button
+        <button data-aos="zoom-in"
          className="flex md:ml-7 bg-black   lg:ml-7 xl:ml-7  font-bold hover:bg-slate-800 px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
           onClick={() => scrollToSection(internshipRef)}
         ><RiVerifiedBadgeFill className="m-1"></RiVerifiedBadgeFill>
           Internships
         </button>
-        <button
+        <button data-aos="zoom-in"
           className="flex font-bold bg-black   hover:bg-slate-800 px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
           onClick={() => scrollToSection(certificationRef)}
         > <PiCertificateFill className="m-1"></PiCertificateFill>

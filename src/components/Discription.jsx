@@ -1,8 +1,4 @@
 import React,{useState,useEffect} from "react";
-import git from "../img/social/git.png";
-import insta from "../img/social/insta.png";
-import link from "../img/social/linkedin.png";
-import mail from "../img/social/mail.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -53,12 +49,7 @@ const Discription = () => {
         <p className="pt-3 text-lg text-justify " data-aos="fade-up">
         I'm a Full Stack web developer with extensive experience in building and developing websites using the MERN stack, Django, Java Spring Boot, Next.js, Nest.js, and FastAPI, as well as Android app development with Flutter and React Native
         </p>
-        <span className=' mt-5  pb-5 flex justify-center items-center mt-10'data-aos="fade-up" >
-      <ImagLink src={git} alt="GitHub" href="https://github.com"  isHovered={isHovered} handleHover={handleHover} />
-      <ImagLink src={insta} alt="Instagram" href="https://instagram.com" isHovered={isHovered} handleHover={handleHover} />
-      <ImagLink src={link} alt="LinkedIn" href="https://linkedin.com" isHovered={isHovered} handleHover={handleHover} />
-      <ImagLink src={mail} alt="Email" href="mailto:example@example.com" isHovered={isHovered} handleHover={handleHover} />
-      </span>
+      
       </div>
   
     

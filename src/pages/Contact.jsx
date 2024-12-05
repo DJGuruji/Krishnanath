@@ -56,7 +56,7 @@ const Contact = () => {
         className="text-center text-yellow-300 text-xl mt-10 font-semibold"
         data-aos="fade-up" 
       >
-        Get In Touch With Me On
+        Get in Touch With Me on
       </h1>
       <div className="flex justify-center items-center mt-8" >
    

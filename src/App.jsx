@@ -3,6 +3,7 @@ import './App.css';
 import HomeRouter from './router/HomeRouter';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <HomeRouter />
+      <Footer></Footer>
     </>
   );
 }
