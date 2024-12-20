@@ -18,11 +18,6 @@ const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (window.location.pathname !== "/") {
-  //     navigate("/");
-  //   }
-  // }, []);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -123,6 +118,7 @@ const HomeRouter = () => {
                   Resume
                 </NavLink>
               </li>
+            
             </ul>
           </div>
           <div>
