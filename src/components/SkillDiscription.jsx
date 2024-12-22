@@ -24,7 +24,7 @@ const SkillDiscription = () => {
           <tr data-aos="fade-up">
             <td className="text-yellow-300 border-b border-slate-700 p-2">Backend</td>
             <td className="border-b border-slate-700 p-2">
-              Node JS, Express JS, Django, Fast API, Java, Deno JS, Nest JS
+              Node JS, Express JS, Django, Fast API, Java Spring Boot, Deno JS, Nest JS
             </td>
           </tr>
           <tr data-aos="fade-up" data-aos-delay="100">

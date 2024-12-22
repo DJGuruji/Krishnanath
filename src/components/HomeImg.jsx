@@ -14,8 +14,8 @@ const HomeImg = () => {
 
   return (
     <>
-      <div className='w-full flex flex-col justify-center items-center md:pl-36 lg:pl-36 xl:pl-36'>
-        <img src={img} alt="face" className='border-2 border-yellow-300 w-48 lg:w-3/4 md:w-3/4 xl:w-3/4 h-58 rounded-sm md:mr-28 lg:mr-28 xl:mr-28' data-aos="fade-up" />
+      <div className='w-full flex flex-col justify-center items-center md:pl-36 lg:pl-36 xl:pl-36 md:mt-20 lg:mt-20 xl:mt-20 '>
+        <img src={img} alt="face" className='border-2 border-yellow-300 w-48 lg:w-1/2 md:w-1/2 xl:w-1/2 h-58 rounded-sm md:mr-28 lg:mr-28 xl:mr-28' data-aos="fade-up" />
       </div>
     </>
   );

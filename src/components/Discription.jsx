@@ -47,7 +47,7 @@ const Discription = () => {
         </h2>
         <h1 className="text-2xl font-sans " data-aos="fade-up">I Am Krishnanath S</h1>
         <p className="pt-3 text-lg text-justify " data-aos="fade-up">
-        I'm a Full Stack web developer with extensive experience in building and developing websites using the MERN stack, Django, Java Spring Boot, Next.js, Nest.js, and FastAPI, as well as Android app development with Flutter and React Native
+        I'm a Full Stack web developer with extensive experience in building and developing websites using the MERN stack, Django, Java Spring Boot, Next.js, and FastAPI.
         </p>
       
       </div>
