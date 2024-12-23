@@ -45,6 +45,20 @@ Project.defaultProps = {
 const ProjectsPage = () => {
   const projects = [
     {
+      name: 'Find My Client',
+      description: 'Designed a MERN stack app for connecting skilled Workers with clients, enabling 100+ successful hires in 2 months.  Integrated Cloudinary for media uploads, reducing media load times by 40%.',
+      status: 'progress',
+      githubLink: 'https://github.com/DJGuruji/Fmc',
+      productionLink: 'nil'
+    },
+    {
+      name: 'AI Assisted Virtual Hospital',
+      description: 'The AI-Assisted Virtual Hospital is an innovative platform that allows users to book appointments with doctors from any department across India. It features an AI assistant to answer health-related queries, helping users make informed decisions. The platform also enables users to track their appointments and allows doctors to manage and share health-related media, such as posts and videos, with patients. This comprehensive system provides convenient, nationwide access to healthcare services and personalized assistance.',
+      status: 'progress',
+      githubLink: 'https://github.com/DJGuruji/AI-Assisted-Virtual-Hospital',
+      productionLink: 'nil'
+    },
+    {
       name: 'Ecommerce ( G-cart )',
       description: 'Experience the epitome of online shopping with our state-of-the-art e-commerce platform, meticulously crafted with React JS Tailwind CSS. Seamlessly blending functionality and aesthetics, our website offers a seamless browsing and purchasing experience for customers. With secure payment options seamlessly integrated into the checkout process, shopping has never been more convenient. Powered by React JS our platform ensures swift and secure transactions, while Tailwind CSS enhances the visual appeal with modern and responsive design elements providing a delightful shopping experience. Dive into a world of convenience and sophistication with our e-commerce website, designed to elevate your online shopping journey.',
       status: 'completed',
@@ -60,22 +74,22 @@ const ProjectsPage = () => {
     },
     {
       name: 'Medical Appointment',
-      description: 'This is a straightforward medical appointment system built using Python Django. It incorporates user authentication, an appointment booking form, and databases for doctors and related information stored in PostgreSQL',
+      description: 'Developed a Django-based appointment system managing 500+ monthly bookings, with automated email reminders improving booking retention by 20%.  Enhance database performance, reducing transaction errors by 50% and Ensured cross-device compatibility, leading to a 35% rise in mobile',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/MedicalAppointment',
       productionLink: 'nil'
     },
 
     {
-      name: 'Entrance React',
-      description: 'Embark on your online entrance exam journey where knowledge meets opportunity. Our platform, meticulously crafted using React, offers a seamless experience to aspiring candidates. With each question, delve into a world of choices, as you select from four meticulously curated options. But beware, time is of the essence, with a countdown timer ticking away 1.5 hours of opportunity. Once the clock runs out, the site gracefully halts, revealing the culmination of your efforts. Witness your mastery unfold as your marks in physics, chemistry, and mathematics materialize before your eyes. It is not just an exam it is a gateway to your future.',
+      name: 'KEAM Mock Entrance Web',
+      description: 'Developed a React-based mock entrance exam platform with subject-specific quizzes and a real-time timer, attracting over 200 participants in 2024. Optimized the platform for scalability, enabling it to handle concurrent users without lag',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/EntranceReact',
       productionLink: 'https://keammock.deno.dev'
     },
     {
       name: 'Complaint Management System',
-      description: 'Our complaint management system is built with React and Tailwind CSS, offering separate interfaces for users and administrators. Users navigate a streamlined portal for lodging complaints and tracking their status, while administrators access a dedicated platform for efficient management and resolution. With user-friendly design and intuitive functionality, our system ensures seamless communication and swift action, enhancing the experience for both users and administrators.',
+      description: 'Designed and implemented a comprehensive complaint management system for college use, leveraging React.js and Tailwind CSS. Provided features for real-time tracking, complaint submission, and admin management, improving resolution efficiency by 30%',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/cmsfront',
       productionLink: 'https://cmsreact.deno.dev'
