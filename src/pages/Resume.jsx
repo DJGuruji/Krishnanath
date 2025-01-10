@@ -54,9 +54,8 @@ const Resume = () => {
           <iframe
             src={pdfUrl}
             title="Resume Preview"
-            width="100%"
-            height="100%"
-            className="border rounded-md mb-4"
+          
+            className="border rounded-md mb-4 w-full h-screen"
           ></iframe>
         </div>
       )}

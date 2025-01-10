@@ -60,7 +60,7 @@ const About = () => {
       {/* Internship Section */}
       <div ref={internshipRef} className="pt-20">
         <h1 className="text-xl text-yellow-300 text-center font-bold pt-8" data-aos="zoom-in">
-          Internship
+          Internships
         </h1>
         <div className="pb-5 mt-8 flex flex-col justify-center items-center">
           <Internship />
