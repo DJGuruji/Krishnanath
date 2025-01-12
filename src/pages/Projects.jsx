@@ -48,8 +48,8 @@ const ProjectsPage = () => {
       name: 'Find My Client',
       description: 'Designed a MERN stack app for connecting skilled Workers with clients, enabling 100+ successful hires in 2 months.  Integrated Cloudinary for media uploads, reducing media load times by 40%.',
       status: 'progress',
-      githubLink: 'https://github.com/DJGuruji/Fmc',
-      productionLink: 'nil'
+      githubLink: 'https://github.com/DJGuruji/fmcFrontend',
+      productionLink: 'https://fmc.deno.dev'
     },
     {
       name: 'AI Assisted Virtual Hospital',
