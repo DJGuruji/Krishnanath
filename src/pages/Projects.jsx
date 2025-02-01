@@ -46,7 +46,7 @@ const ProjectsPage = () => {
   const projects = [
     {
       name: 'Find My Client',
-      description: 'Designed a MERN stack app for connecting skilled Workers with clients, enabling 100+ successful hires in 2 months.  Integrated Cloudinary for media uploads, reducing media load times by 40%.',
+      description: 'Developed an AI-powered MERN stack application that connects skilled workers with clients, facilitating 100+ successful hires in just two months. The platform enables professionals to showcase their expertise by posting images and content related to their work, with media uploads optimized via Cloudinary, reducing load times by 40%. Users can connect with other professionals, follow profiles, and expand their network, fostering a dynamic professional community.',
       status: 'progress',
       githubLink: 'https://github.com/DJGuruji/fmcFrontend',
       productionLink: 'https://fmc.deno.dev'
