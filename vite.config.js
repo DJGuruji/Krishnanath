@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [react()],
   base: './', // Use a relative path
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // This allows you to use @ to reference the /src directory
+    },
+  },
 });

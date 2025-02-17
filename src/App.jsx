@@ -16,7 +16,8 @@ function App() {
   return (
     <>
       <HomeRouter />
-      <Footer></Footer>
+     <Footer></Footer>
+    
     </>
   );
 }

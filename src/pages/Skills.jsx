@@ -4,6 +4,7 @@ import SkillDiscription from "../components/SkillDiscription";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 const Skills = () => {
   useEffect(() => {
     AOS.init({

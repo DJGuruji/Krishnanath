@@ -12,8 +12,8 @@ const SkillDiscription = () => {
   }, []);
 
   return (
-    <div className="border-2 border-yellow-300 bg-black mt-4 p-4 rounded-lg">
-      <table className="table-auto w-full text-white" >
+    <div className="border-2 border-yellow-300 bg-black mt-4 p-4 rounded-lg" data-aos="fade-up">
+      <table className="table-auto w-full text-white"  >
         {/* <thead>
           <tr>
             <th className="text-left text-yellow-300 p-2">Category</th>
@@ -21,43 +21,43 @@ const SkillDiscription = () => {
           </tr>
         </thead> */}
         <tbody>
-          <tr data-aos="fade-up">
+          <tr>
             <td className="text-yellow-300 border-b border-slate-700 p-2">Backend</td>
             <td className="border-b border-slate-700 p-2">
               Node JS, Express JS, Django, Fast API, Java Spring Boot, Deno JS, Nest JS
             </td>
           </tr>
-          <tr data-aos="fade-up" data-aos-delay="100">
+          <tr >
             <td className="text-yellow-300 border-b border-slate-700 p-2">Frontend</td>
             <td className="border-b border-slate-700 p-2">
               HTML5, CSS, Bootstrap, Tailwind CSS, React JS, Angular JS, Zustand, TypeScript, Next JS
             </td>
           </tr>
-          <tr data-aos="fade-up" data-aos-delay="200">
+          <tr >
             <td className="text-yellow-300 border-b border-slate-700 p-2">Database</td>
             <td className="border-b border-slate-700 p-2">
               MongoDB, MySQL, PostgreSQL
             </td>
           </tr>
-          <tr data-aos="fade-up" data-aos-delay="300">
+          <tr >
             <td className="text-yellow-300 border-b border-slate-700 p-2">Cloud Services</td>
             <td className="border-b border-slate-700 p-2">
               Amazon Web Services (AWS), Deno Deploy, Vercel, Python Anywhere, Azure
             </td>
           </tr>
-          <tr data-aos="fade-up" data-aos-delay="400">
+          <tr >
             <td className="text-yellow-300 border-b border-slate-700 p-2">Programming Languages</td>
             <td className="border-b border-slate-700 p-2">
               C, Java, Python, JavaScript, PHP
             </td>
           </tr>
-          <tr data-aos="fade-up" data-aos-delay="500">
+          <tr >
             <td className="text-yellow-300 border-b border-slate-700 p-2">Version Control</td>
             <td className="border-b border-slate-700 p-2">
               Git, GitHub
             </td>
           </tr>
-          <tr data-aos="fade-up" data-aos-delay="600">
+          <tr >
             <td className="text-yellow-300 border-b border-slate-700 p-2">Soft Skills</td>
             <td className="border-b border-slate-700 p-2">
               Teamwork, Problem Solving, Bias For Action, Excel, Word, PowerPoint

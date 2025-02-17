@@ -47,16 +47,16 @@ const ProjectsPage = () => {
     {
       name: 'Find My Client',
       description: 'Developed an AI-powered MERN stack application that connects skilled workers with clients, facilitating 100+ successful hires in just two months. The platform enables professionals to showcase their expertise by posting images and content related to their work, with media uploads optimized via Cloudinary, reducing load times by 40%. Users can connect with other professionals, follow profiles, and expand their network, fostering a dynamic professional community.',
-      status: 'progress',
+      status: 'completed',
       githubLink: 'https://github.com/DJGuruji/fmcFrontend',
       productionLink: 'https://fmc.deno.dev'
     },
     {
       name: 'AI Assisted Virtual Hospital',
       description: 'The AI-Assisted Virtual Hospital is an innovative platform that allows users to book appointments with doctors from any department across India. It features an AI assistant to answer health-related queries, helping users make informed decisions. The platform also enables users to track their appointments and allows doctors to manage and share health-related media, such as posts and videos, with patients. This comprehensive system provides convenient, nationwide access to healthcare services and personalized assistance.',
-      status: 'progress',
+      status: 'completed',
       githubLink: 'https://github.com/DJGuruji/AI-Assisted-Virtual-Hospital',
-      productionLink: 'nil'
+      productionLink: 'https://vmas.deno.dev'
     },
     {
       name: 'Ecommerce ( G-cart )',
@@ -70,7 +70,7 @@ const ProjectsPage = () => {
       description: '**Vyuha** is a MERN stack project designed for seamless ticket booking for college day events, specifically catering to alumni and current students. The application provides a user-friendly interface to browse events, book tickets, and manage reservations, streamlining the booking process for college gatherings.',
       status: 'completed',
       githubLink: 'https://github.com/DJGuruji/vyuha',
-      productionLink: 'https://vyuha.deno.dev'
+      productionLink: 'https://vidyavyuha.in'
     },
     {
       name: 'Medical Appointment',

@@ -29,7 +29,7 @@ const HomeRouter = () => {
 
   return (
     <>
-      <nav className="bg-black h-16 border-b-2 border-slate-500 relative w-full">
+      <nav className="sticky z-50 top-0 bg-black h-16 border-b-2 border-slate-500 relative w-full">
         <div className="flex justify-between w-screen items-center">
           <h1 className="text-yellow-300 text-2xl font-bold ml-3 font-slab mt-4 md:mt-2 lg:mt-2 xl:mt-2">
             <NavLink
