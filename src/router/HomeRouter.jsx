@@ -132,7 +132,7 @@ const HomeRouter = () => {
             </button>
             {dropdown && (
               <div
-                className="absolute mt-5 rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300 z-50"
+                className="absolute mt-5  rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300 z-50 "
                 style={{ zIndex: 70 }}
               >
                 <ul className="flex flex-col text-lg mr-4">
