@@ -46,7 +46,7 @@ const Discription = () => {
           Hello!
         </h2>
         <h1 className="text-2xl font-sans " data-aos="fade-up">I Am Krishnanath S</h1>
-        <h1 className="text-md  text-aqua-300  font-sans " data-aos="fade-up">MERN Stack Developer Intern | ZedSoftTech | Tirur, Malappuram, Kerala</h1>
+        <h1 className="text-md  text-aqua-300  font-sans " data-aos="fade-up">Software Engineer | Simpita.ai | Villupuram, Tamil Nadu</h1>
         <p className="pt-5 text-lg text-justify " data-aos="fade-up">
         I'm a Full Stack web developer with extensive experience in building and developing websites using the MERN stack, Django, Java Spring Boot and Next.js.
         </p>

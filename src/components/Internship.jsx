@@ -5,13 +5,23 @@ import "aos/dist/aos.css";
 const Internship = () => {
   const internships = [
     {
+      title: "Software Engineer",
+      company: "Simpita.ai",
+      location: "Villupuram, Tamil Nadu",
+      locationType: "Hybrid",
+      startDate: "April 2025",
+      endDate: "Current Position",
+      description:
+        " Developing AI-driven solutions to enhance business operations and decision-making. My work involves building machine learning models, AI-powered analytics platforms, and automation tools. I have contributed to projects focused on intelligent data processing, predictive analytics, and workflow optimization, helping businesses leverage AI for efficiency and growth.",
+    },
+    {
       title: "MERN Stack Developer Intern",
       company: "ZedSoftTech",
       location: "Tirur, Malappuram",
       locationType: "Work from Home",
       startDate: "December 2024",
-      endDate: "April 2024",
-      duration:"4 Months",
+      endDate: "April 2025",
+     
       description:
         "developing a MERN stack e-commerce platform that allows businesses to purchase customizable admin panels, offering them tailored solutions to meet their specific needs. As part of the project, I am creating a modular and scalable admin panel using React with TypeScript, ensuring businesses can easily customize their panels. The user interface and experience are designed to be intuitive and responsive, leveraging Tailwind CSS to provide modern aesthetics and seamless interactions across all devices. On the backend, I am building a robust system with Node.js and Express, integrated with MongoDB to manage data efficiently and securely. To support dynamic customization, the admin panels allow businesses to adjust the features according to their requirements. Throughout the project, I focus on optimizing the platform’s performance by conducting thorough testing, debugging, and optimizing database queries. Additionally, I collaborate with cross-functional teams in an Agile environment to ensure the project meets deadlines while maintaining high standards of quality.",
     },
@@ -22,7 +32,7 @@ const Internship = () => {
       locationType: "Work from Home",
       startDate: "October 2024",
       endDate: "November 2024",
-      duration:"1 Months",
+     
       description:
         "Developed a full-featured e-commerce application using the MERN stack. Responsibilities included user authentication, product listings, order management, payment gateway integration, and enhancing the user interface using React and Tailwind CSS.",
     },
@@ -75,15 +85,12 @@ const Internship = () => {
                 <td className="text-left text-yellow-300  font-semibold">End Date</td>
                 <td className="text-left ">: {internship.endDate}</td>
               </tr>
-              <tr className="p-1">
-                <td className="text-left text-yellow-300  font-semibold">Duration</td>
-                <td className="text-left ">: {internship.duration}</td>
-              </tr>
+          
               <tr className="p-1">
                 <td className="text-start text-yellow-300 font-semibold">
                   Description
                 </td>
-                <td className="text-left text-justify">: {internship.description}</td>
+                <td className=" text-justify">: {internship.description}</td>
               </tr>
             </tbody>
           </table>

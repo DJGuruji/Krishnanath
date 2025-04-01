@@ -35,7 +35,7 @@ const About = () => {
          className="flex md:ml-7 bg-black   lg:ml-7 xl:ml-7  font-bold hover:bg-slate-800 px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
           onClick={() => scrollToSection(internshipRef)}
         ><RiVerifiedBadgeFill className="m-1"></RiVerifiedBadgeFill>
-          Internships
+          Experience
         </button>
         <button data-aos="zoom-in"
           className="flex font-bold bg-black   hover:bg-slate-800 px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
@@ -57,10 +57,10 @@ const About = () => {
         </div>
       </div>
 
-      {/* Internship Section */}
+      {/* Experience Section */}
       <div ref={internshipRef} className="pt-20">
         <h1 className="text-xl text-yellow-300 text-center font-bold pt-8" data-aos="zoom-in">
-          Internships
+        Experience
         </h1>
         <div className="pb-5 mt-8 flex flex-col justify-center items-center">
           <Internship />
