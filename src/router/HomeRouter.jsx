@@ -131,6 +131,18 @@ const HomeRouter = () => {
                     Resume
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    to="/contact"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <BiSolidUserBadge className="mr-1" />
+                    Contact
+                  </NavLink>
+                </li>
             
               </ul>
             </div>
@@ -214,6 +226,16 @@ const HomeRouter = () => {
               >
                 <BiSolidUserBadge className="mr-2" />
                 Resume
+              </NavLink>
+              <NavLink
+                to="/contact"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <FaDiagramProject className="mr-2" />
+                Contact
               </NavLink>
             </div>
           </div>

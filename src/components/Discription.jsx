@@ -62,7 +62,7 @@ const Discription = () => {
             I'm a <span className="text-yellow-400 font-medium">Full Stack Web Developer</span> with extensive experience in building and developing websites using the MERN stack, Django, FastAPI and Next.js.
           </p>
           
-          <div className="mt-8 mb-8">
+         
             <button 
         
               className="btn-primary"
@@ -78,7 +78,7 @@ const Discription = () => {
               >
               Contact Me
             </button>
-          </div>
+     
         </div>
       </div>
     </section>
