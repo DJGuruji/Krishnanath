@@ -63,23 +63,21 @@ const Discription = () => {
           </p>
           
           <div className="mt-8 mb-8">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <button 
+        
               className="btn-primary"
               onClick={() => navigate("/projects")}
             >
               View My Work
-            </motion.button>
+            </button>
             
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <button
+          
               className="ml-4 px-6 py-2 bg-transparent text-yellow-400 font-semibold rounded-sm border border-yellow-500 hover:bg-yellow-500/10 transition-colors duration-300"
               onClick={() => navigate("/contact")}
               >
               Contact Me
-            </motion.button>
+            </button>
           </div>
         </div>
       </div>
