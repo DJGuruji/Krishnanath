@@ -6,7 +6,7 @@ const Internship = () => {
   const internships = [
     {
       title: "Software Engineer",
-      company: "Simpita.ai",
+      company: "Simplita.ai",
       location: "Villupuram, Tamil Nadu",
       locationType: "Hybrid",
       startDate: "April 2025",

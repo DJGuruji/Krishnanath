@@ -47,9 +47,9 @@ const Resume = () => {
         <div className="mt-6 w-full h-[80vh] flex flex-col items-center">
           <button
             onClick={handleClosePreview}
-            className="px-6 py-3 bg-red-500 text-white rounded hover:bg-red-600 hover:rounded-xl font-bold"
+            className="px-3 pt-1 pb-2 bg-red-500 text-white text-3xl  hover:bg-red-600 rounded-full font-bold"
           >
-            Close Preview
+            &times;
           </button>
           <iframe
             src={pdfUrl}

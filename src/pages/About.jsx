@@ -25,12 +25,7 @@ const About = () => {
     <div className="h-full bg-black">
       {/* Fixed Navigation */}
       <div className="fixed top-12 left-0 w-full text-white bg-opacity-1 shadow-md flex  md:justify-around lg:justify-around xl:justify-around py-4 z-40">
-        <button data-aos="zoom-in"
-          className=" flex ml-1 bg-black  font-bold hover:bg-slate-800 px-1 md:px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
-          onClick={() => scrollToSection(degreeRef)}
-        ><IoSchool className="m-1"></IoSchool>
-          Degree
-        </button>
+       
         <button data-aos="zoom-in"
          className="flex md:ml-7 bg-black   lg:ml-7 xl:ml-7  font-bold hover:bg-slate-800 px-1 md:px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
           onClick={() => scrollToSection(internshipRef)}
@@ -43,19 +38,15 @@ const About = () => {
         > <PiCertificateFill className="m-1"></PiCertificateFill>
           Certifications
         </button>
+        <button data-aos="zoom-in"
+          className=" flex ml-1 bg-black  font-bold hover:bg-slate-800 px-1 md:px-3 py-2 rounded-md hover:rounded-xl border-2 border-slate-500 "
+          onClick={() => scrollToSection(degreeRef)}
+        ><IoSchool className="m-1"></IoSchool>
+          Education
+        </button>
       </div>
 
-      {/* Degree Section */}
-      <div ref={degreeRef} className="pt-20">
-        <h1 className="text-xl text-yellow-300 text-center font-bold pt-8" data-aos="zoom-in">
-          Degree
-        </h1>
-        <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
-          <div className="pb-5 mt-8 flex flex-col justify-center items-center">
-            <AboutDiscription />
-          </div>
-        </div>
-      </div>
+  
 
       {/* Experience Section */}
       <div ref={internshipRef} className="pt-20">
@@ -75,6 +66,17 @@ const About = () => {
         <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
           <div className="pb-5 mt-8 flex flex-col justify-center items-center">
             <Certification />
+          </div>
+        </div>
+      </div>
+          {/* Degree Section */}
+          <div ref={degreeRef} className="pt-20">
+        <h1 className="text-xl text-yellow-300 text-center font-bold pt-8" data-aos="zoom-in">
+          Education
+        </h1>
+        <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
+          <div className="pb-5 mt-8 flex flex-col justify-center items-center">
+            <AboutDiscription />
           </div>
         </div>
       </div>

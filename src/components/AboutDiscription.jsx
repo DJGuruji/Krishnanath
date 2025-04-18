@@ -28,9 +28,20 @@ const AboutDiscription = () => {
         <td className="text-yellow-300 font-semibold mr-1">CGPA</td>
         <td className="">: 8.3</td>
       </tr>
+      <br />
+      <br />
+
       <tr className="p-1" >
-        <td className="text-yellow-300 font-semibold ">Languages</td>
-        <td className=" ">: Malayalam, English</td>
+        <td className="text-yellow-300 font-semibold">Stream</td>
+        <td className="">: Biology Science (2018-2020)</td>
+      </tr>
+      <tr className="p-1" >
+        <td className="text-yellow-300 font-semibold">School</td>
+        <td className="">: Govt. Model Higher Secondary School, Varkala</td>
+      </tr>
+      <tr className="p-1" >
+        <td className="text-yellow-300 font-semibold mr-1">Percentage</td>
+        <td className="">: 94.5</td>
       </tr>
     </tbody>
   </table>

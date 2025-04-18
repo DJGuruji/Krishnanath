@@ -13,11 +13,25 @@ import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import { FaDiagramProject } from "react-icons/fa6";
 import { GiSkills } from "react-icons/gi";
 import { BiSolidUserBadge } from "react-icons/bi";
-
+import Contact from "../pages/Contact";
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -29,192 +43,183 @@ const HomeRouter = () => {
 
   return (
     <>
-      <nav className="sticky z-50 top-0 bg-black h-16 border-b-2 border-slate-500 relative w-full">
-        <div className="flex justify-between w-screen items-center">
-          <h1 className="text-yellow-300 text-2xl font-bold ml-3 font-slab mt-4 md:mt-2 lg:mt-2 xl:mt-2">
-            <NavLink
-              to="/"
-              onClick={handleItemClick}
-              className="text-yellow-300"
-            >
-              Krishnanath.S
-            </NavLink>
-          </h1>
-
-          <div className="w-1/2"></div>
-
-          <div className="md:flex hidden">
-            <ul className="flex text-lg">
-              <li className="mt-2 p-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold " : "flex"
-                  }
-                >
-                  <FaHome className="m-1" />
-                  Home
-                </NavLink>
-              </li>
-              <li className="mt-2 p-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/about"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold" : "flex"
-                  }
-                >
-                  <FaFileAlt className="m-1" />
-                  About
-                </NavLink>
-              </li>
-              <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/skills"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold" : "flex"
-                  }
-                >
-                  <GiSkills className="m-1" />
-                  Skills
-                </NavLink>
-              </li>
-              <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/service"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold" : "flex"
-                  }
-                >
-                  <MdOutlineMiscellaneousServices className="m-1" />
-                  Services
-                </NavLink>
-              </li>
-              <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/projects"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold" : "flex"
-                  }
-                >
-                  <FaDiagramProject className="m-1" />
-                  Projects
-                </NavLink>
-              </li>
-       
-              <li className="p-2 mt-2 text-white font-light hover:font-bold">
-                <NavLink
-                  to="/resume"
-                  onClick={handleItemClick}
-                  className={({ isActive }) =>
-                    isActive ? "flex underline font-bold" : "flex"
-                  }
-                >
-                  <BiSolidUserBadge className="m-1 text-xl" />
-                  Resume
-                </NavLink>
-              </li>
-            
-            </ul>
-          </div>
-          <div>
-            <button
-              className="text-white mt-3 relative md:hidden mr-2"
-              onClick={handleDropdown}
-            >
-               <div className="w-8 h-1 bg-white m-1 rounded-lg"></div>
-               <div className="w-7 h-1 bg-white ml-2 rounded-lg"></div>
-             
-            </button>
-            {dropdown && (
-              <div
-                className="absolute mt-5  rounded-md shadow-lg bg-black right-0 border-2 border-yellow-300 z-50 "
-                style={{ zIndex: 70 }}
+      <nav className={`sticky z-50 top-0 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-black'} h-16 border-b border-zinc-800 relative w-full`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <h1 className="text-yellow-400 text-2xl font-bold font-slab flex items-center">
+              <NavLink
+                to="/"
+                onClick={handleItemClick}
+                className="hover:text-yellow-300 transition-colors duration-300"
               >
-                <ul className="flex flex-col text-lg mr-4">
-                  <li className="mt-2 p-2 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <FaHome className="m-1" />
-                      Home
-                    </NavLink>
-                  </li>
-                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/about"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <FaFileAlt className="m-1" />
-                      About
-                    </NavLink>
-                  </li>
-                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/Skills"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <GiSkills className="m-1" />
-                      Skills
-                    </NavLink>
-                  </li>
-                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/service"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <MdOutlineMiscellaneousServices className="m-1" />
-                      Services
-                    </NavLink>
-                  </li>
-                  <li className="p-2 mt-2 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/projects"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <FaDiagramProject className="m-1" />
-                      Projects
-                    </NavLink>
-                  </li>
+                Krishnanath.S
+              </NavLink>
+            </h1>
+
+            <div className="md:flex hidden">
+              <ul className="flex space-x-1 text-lg">
+                <li>
+                  <NavLink
+                    to="/"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <FaHome className="mr-1" />
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/about"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <FaFileAlt className="mr-1" />
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/skills"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <GiSkills className="mr-1" />
+                    Skills
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/service"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <MdOutlineMiscellaneousServices className="mr-1" />
+                    Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/projects"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <FaDiagramProject className="mr-1" />
+                    Projects
+                  </NavLink>
+                </li>
+       
+                <li>
+                  <NavLink
+                    to="/resume"
+                    onClick={handleItemClick}
+                    className={({ isActive }) =>
+                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
+                    }
+                  >
+                    <BiSolidUserBadge className="mr-1" />
+                    Resume
+                  </NavLink>
+                </li>
             
-                  <li className="p-2 mt-2 mr-10 text-white font-light hover:font-bold text-center">
-                    <NavLink
-                      to="/resume"
-                      onClick={handleItemClick}
-                      className={({ isActive }) =>
-                        isActive ? "flex underline font-bold" : "flex"
-                      }
-                    >
-                      <BiSolidUserBadge className="m-1 text-xl" />
-                      Resume
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            )}
+              </ul>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                className="flex flex-col items-center justify-center p-2 rounded-md text-yellow-400 focus:outline-none"
+                onClick={handleDropdown}
+              >
+                <span className={`w-6 h-0.5 bg-current mb-1.5 transition-all duration-300 ${dropdown ? 'transform rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-current transition-all duration-300 ${dropdown ? 'opacity-0' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-current mt-1.5 transition-all duration-300 ${dropdown ? 'transform -rotate-45 -translate-y-2' : ''}`}></span>
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile menu dropdown */}
+        {dropdown && (
+          <div
+            className="absolute w-full md:hidden bg-zinc-900/95 backdrop-blur-sm border-b border-zinc-800 shadow-xl transition-all duration-300 slide-up"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <NavLink
+                to="/"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <FaHome className="mr-2" />
+                Home
+              </NavLink>
+              <NavLink
+                to="/about"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <FaFileAlt className="mr-2" />
+                About
+              </NavLink>
+              <NavLink
+                to="/skills"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <GiSkills className="mr-2" />
+                Skills
+              </NavLink>
+              <NavLink
+                to="/service"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <MdOutlineMiscellaneousServices className="mr-2" />
+                Services
+              </NavLink>
+              <NavLink
+                to="/projects"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <FaDiagramProject className="mr-2" />
+                Projects
+              </NavLink>
+              <NavLink
+                to="/resume"
+                onClick={handleItemClick}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
+                }
+              >
+                <BiSolidUserBadge className="mr-2" />
+                Resume
+              </NavLink>
+            </div>
+          </div>
+        )}
       </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -222,6 +227,7 @@ const HomeRouter = () => {
         <Route path="/service" element={<Service />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
