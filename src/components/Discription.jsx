@@ -39,7 +39,7 @@ const Discription = () => {
   const navigate = useNavigate();
   
   return (
-    <section className="py-20 px-6 md:px-10 bg-gradient-to-b from-black to-zinc-900">
+    <section className="py-12 pb-20 md:py-20 px-6 md:px-10 bg-gradient-to-b from-black to-zinc-900">
       <div className="max-w-4xl mx-auto">
         <div className="space-y-6" data-aos="fade-up">
           <h2 className="font-sans text-xl font-medium text-yellow-400">
@@ -62,7 +62,7 @@ const Discription = () => {
             I'm a <span className="text-yellow-400 font-medium">Full Stack Web Developer</span> with extensive experience in building and developing websites using the MERN stack, Django, FastAPI and Next.js.
           </p>
           
-          <div className="mt-10">
+          <div className="mt-8 mb-8">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -79,7 +79,6 @@ const Discription = () => {
               onClick={() => navigate("/contact")}
               >
               Contact Me
-
             </motion.button>
           </div>
         </div>
