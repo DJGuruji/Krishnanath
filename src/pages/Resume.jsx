@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ThreeBackground from "../components/ThreeBackground";
+import BackgroundToggle from "../components/BackgroundToggle";
+import { useBackground } from "../context/BackgroundContext";
 
 const Resume = () => {
   const pdfUrl = "/Krishnanaths_Resume.pdf";
   const [showPreview, setShowPreview] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { showBackground, bgOpacity } = useBackground();
 
   useEffect(() => {
+    setMounted(true);
     AOS.init({
       duration: 1500,
       easing: "ease-in-out",
@@ -30,8 +36,10 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6 flex flex-col items-center">
-      <div className="max-w-4xl w-full">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6 flex flex-col items-center relative overflow-hidden">
+      {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
+      
+      <div className="max-w-4xl w-full relative z-10">
         <h1 
           className="text-4xl font-serif text-yellow-200 text-center mb-12 pb-4 border-b border-yellow-700/30"
           data-aos="fade-down"
@@ -40,7 +48,7 @@ const Resume = () => {
         </h1>
         
         <div 
-          className="border border-yellow-200 p-8 bg-gradient-to-b from-gray-900 to-black rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 mb-8 flex flex-col items-center"
+          className="border border-yellow-200 p-8 bg-gradient-to-b from-gray-900 to-black rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 mb-8 flex flex-col items-center backdrop-blur-sm"
           data-aos="fade-up"
         >
           <p className="text-gray-300 leading-relaxed mb-8 text-center max-w-2xl">
@@ -76,6 +84,8 @@ const Resume = () => {
           </div>
         </div>
       </div>
+
+      {mounted && <BackgroundToggle />}
 
       {showPreview && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">

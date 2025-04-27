@@ -1,9 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ThreeBackground from '../components/ThreeBackground';
+import BackgroundToggle from '../components/BackgroundToggle';
+import { useBackground } from '../context/BackgroundContext';
 
 const ServicesPage = () => {
+  const [mounted, setMounted] = useState(false);
+  const { showBackground, bgOpacity } = useBackground();
+  
   useEffect(() => {
+    setMounted(true);
     AOS.init({
       duration: 1500, 
       easing: "ease-in-out",
@@ -60,8 +67,10 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6 relative overflow-hidden">
+      {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <h1 
           className="text-4xl font-serif text-yellow-200 text-center mb-12 pb-4 border-b border-yellow-700/30" 
           data-aos="fade-down"
@@ -73,7 +82,7 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="border border-yellow-200 bg-gradient-to-b from-gray-900 to-black p-6 rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 flex flex-col"
+              className="border border-yellow-200 bg-gradient-to-b from-gray-900 to-black p-6 rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 flex flex-col backdrop-blur-sm"
               data-aos={service.animation}
               data-aos-delay={index * 50}
             >
@@ -85,6 +94,8 @@ const ServicesPage = () => {
           ))}
         </div>
       </div>
+      
+      {mounted && <BackgroundToggle />}
     </div>
   );
 };

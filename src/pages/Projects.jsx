@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ThreeBackground from "../components/ThreeBackground";
+import BackgroundToggle from "../components/BackgroundToggle";
+import { useBackground } from "../context/BackgroundContext";
 
 const Project = ({ name, description, status, githubLink, productionLink }) => (
   <div 
@@ -61,6 +64,9 @@ Project.defaultProps = {
 };
 
 const ProjectsPage = () => {
+  const [mounted, setMounted] = useState(false);
+  const { showBackground, bgOpacity } = useBackground();
+  
   const projects = [
     {
       name: 'Find My Client',
@@ -149,6 +155,7 @@ const ProjectsPage = () => {
   ];
 
   useEffect(() => {
+    setMounted(true);
     AOS.init({
       duration: 1500,
       easing: "ease-in-out",
@@ -157,8 +164,10 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6">
-      <div className="max-w-5xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6 relative overflow-hidden">
+      {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
+      
+      <div className="max-w-5xl mx-auto relative z-10">
         <h1 
           className="text-4xl font-serif text-yellow-200 text-center mb-12 pb-4 border-b border-yellow-700/30" 
           data-aos="fade-down"
@@ -174,6 +183,8 @@ const ProjectsPage = () => {
           />
         ))}
       </div>
+      
+      {mounted && <BackgroundToggle />}
     </div>
   );
 };

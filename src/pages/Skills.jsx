@@ -1,12 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SkillDiscription from "../components/SkillDiscription";
 // import AboutImg from "../components/AboutImg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import ThreeBackground from "../components/ThreeBackground";
+import BackgroundToggle from "../components/BackgroundToggle";
+import { useBackground } from "../context/BackgroundContext";
 
 const Skills = () => {
+  const [mounted, setMounted] = useState(false);
+  const { showBackground, bgOpacity } = useBackground();
+
   useEffect(() => {
+    setMounted(true);
     AOS.init({
       duration: 1000, 
       once: true,   
@@ -14,8 +20,11 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 py-12">
-      <div className="max-w-6xl mx-auto px-6">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 py-12 relative overflow-hidden">
+      {/* Only render Three.js background after component mounts to prevent SSR issues */}
+      {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
+      
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-10">
           <div className="w-full md:w-1/4 flex flex-col items-center md:items-start">
             <h1 
@@ -39,6 +48,8 @@ const Skills = () => {
           </div>
         </div>
       </div>
+      
+      {mounted && <BackgroundToggle />}
     </div>
   );
 };
