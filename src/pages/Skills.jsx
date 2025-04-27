@@ -14,19 +14,32 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] bg-black">
-     
-    <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
-    
-      <div className="pt-10 flex  justify-center items-center pl-5 ">
-      {/* <AboutImg /> */}
-      <h1 data-aos="fade-up" className="flex justify-center text-yellow-300 text-xl font-bold border-2 border-slate-300 p-2 rounded-lg ">SKILLS</h1>
-      </div>
-      <div className="pb-5 mt-10 md:mt-20 lg:mt-20 xl:mt-20 flex flex-col justify-center items-center">
-      <SkillDiscription />
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
+          <div className="w-full md:w-1/4 flex flex-col items-center md:items-start">
+            <h1 
+              data-aos="fade-right" 
+              className="text-3xl md:text-4xl font-serif text-yellow-200 pb-3 border-b border-yellow-700/30"
+            >
+              SKILLS
+            </h1>
+            
+            <p 
+              data-aos="fade-right" 
+              data-aos-delay="100" 
+              className="mt-6 text-gray-300 leading-relaxed hidden md:block"
+            >
+              A showcase of my technical expertise and professional capabilities that I've developed throughout my career.
+            </p>
+          </div>
+          
+          <div className="w-full md:w-3/4">
+            <SkillDiscription />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

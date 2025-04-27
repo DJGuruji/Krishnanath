@@ -38,59 +38,47 @@ const Certification = () => {
   }, []);
 
   return (
-    <div className="space-y-6 px-4 sm:px-8">
+    <div className="space-y-8 px-4 sm:px-8">
       {certifications.map((cert, index) => (
         <div
           key={index}
-          className="border-2 border-yellow-300 p-4 bg-black rounded-md"
+          className="border border-yellow-200 p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300"
           data-aos="fade-up"
           data-aos-delay={index * 100}
         >
-          <div className="overflow-x-auto">
-            <table className="table-auto w-full text-white text-sm sm:text-base">
-              <tbody>
-                <tr>
-                  <td className="text-yellow-300 font-semibold">Name</td>
-                  <td>: {cert.name}</td>
-                </tr>
-                <tr>
-                  <td className="text-yellow-300 font-semibold">
-                    Issuing Organization
-                  </td>
-                  <td>: {cert.organization}</td>
-                </tr>
-                <tr>
-                  <td className="text-yellow-300 font-semibold">Issue Date</td>
-                  <td>: {cert.issueDate}</td>
-                </tr>
-                <tr>
-                  <td className="text-yellow-300 font-semibold">
-                    Credential ID
-                  </td>
-                  <td>: {cert.credentialId}</td>
-                </tr>
-                <tr>
-                  <td className="text-yellow-300 font-semibold">
-                    Credential URL
-                  </td>
-                  <td>
-                    :{" "}
-                    {cert.credentialUrl ? (
-                      <a
-                        href={cert.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:underline break-all"
-                      >
-                        {cert.credentialUrl}
-                      </a>
-                    ) : (
-                      "N/A"
-                    )}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="flex flex-col space-y-4">
+            <div className="border-b border-yellow-700/30 pb-3">
+              <h3 className="text-xl font-serif text-yellow-200">{cert.name}</h3>
+              <p className="text-yellow-100/70 text-sm mt-1 italic">Issued by {cert.organization} • {cert.issueDate}</p>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <table className="table-auto w-full text-white text-sm sm:text-base">
+                <tbody>
+                  <tr className="hover:bg-yellow-900/10 transition-colors">
+                    <td className="py-2 text-left text-yellow-300 font-medium w-1/4">Credential ID</td>
+                    <td className="py-2 text-left text-gray-200">{cert.credentialId}</td>
+                  </tr>
+                  <tr className="hover:bg-yellow-900/10 transition-colors">
+                    <td className="py-2 text-left text-yellow-300 font-medium align-top">Verify</td>
+                    <td className="py-2 text-left text-gray-200">
+                      {cert.credentialUrl ? (
+                        <a
+                          href={cert.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-yellow-200 hover:text-yellow-400 transition-colors underline decoration-dotted underline-offset-4 break-all"
+                        >
+                          View Certificate
+                        </a>
+                      ) : (
+                        "Not Available"
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       ))}

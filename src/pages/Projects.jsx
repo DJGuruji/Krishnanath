@@ -4,29 +4,47 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Project = ({ name, description, status, githubLink, productionLink }) => (
-  <div className="border p-4 rounded-lg mb-4" data-aos="fade-up">
-   
-    <h2 className="text-xl font-semibold text-center text-yellow-300">{name}</h2>
-    <p className="text-white mb-2 text-justify text-center">{description}</p>
-
-    <p className={`text-sm text-center ${status === 'completed' ? 'text-green-400' : 'text-yellow-400'}`}>{status}</p>
-    <span className="flex justify-center p-5">
-      <a href={githubLink} className="text-blue-600 underline text-center" target="_blank" rel="noopener noreferrer">
-        GitHub
+  <div 
+    className="border border-yellow-200 p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 mb-8" 
+    data-aos="fade-up"
+  >
+    <div className="mb-4 border-b border-yellow-700/30 pb-3">
+      <h2 className="text-2xl font-serif text-yellow-200">{name}</h2>
+      <p className={`text-sm italic mt-1 ${status === 'completed' ? 'text-green-400' : 'text-yellow-400'}`}>
+        Status: {status.charAt(0).toUpperCase() + status.slice(1)}
+      </p>
+    </div>
+    
+    <p className="text-gray-300 leading-relaxed mb-6 text-justify">{description}</p>
+    
+    <div className="flex flex-col sm:flex-row justify-between items-center mt-4 pt-3 border-t border-yellow-700/30 gap-4">
+      <a 
+        href={githubLink} 
+        className="px-4 py-2 border border-yellow-700 text-yellow-200 rounded hover:bg-yellow-900/20 transition-colors flex items-center gap-2"
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </svg>
+        View Code
       </a>
-    </span>
-    {productionLink !== 'nil' ? (
-      <span className="flex justify-center p-5 text-white">
-        Visit The Web Application : 
-        <a href={productionLink} className="text-blue-400 underline text-center" target="_blank" rel="noopener noreferrer">
-          click here
+      
+      {productionLink !== 'nil' ? (
+        <a 
+          href={productionLink} 
+          className="px-4 py-2 bg-yellow-800/30 border border-yellow-700 text-yellow-200 rounded hover:bg-yellow-800/50 transition-colors"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Live Demo
         </a>
-      </span>
-    ) : (
-      <span className="flex justify-center p-5 text-white">
-        Visit The Web Application : <p className='underline text-blue-500'> Nil</p>
-      </span>
-    )}
+      ) : (
+        <span className="px-4 py-2 bg-gray-800/30 border border-gray-700 text-gray-400 rounded cursor-not-allowed">
+          Demo Unavailable
+        </span>
+      )}
+    </div>
   </div>
 );
 
@@ -79,7 +97,6 @@ const ProjectsPage = () => {
       githubLink: 'https://github.com/DJGuruji/MedicalAppointment',
       productionLink: 'nil'
     },
-
     {
       name: 'KEAM Mock Entrance Web',
       description: 'Developed a React-based mock entrance exam platform with subject-specific quizzes and a real-time timer, attracting over 200 participants in 2024. Optimized the platform for scalability, enabling it to handle concurrent users without lag',
@@ -115,7 +132,6 @@ const ProjectsPage = () => {
       githubLink: 'https://github.com/DJGuruji/PasswordGenerator',
       productionLink: 'https://passwordgenerator.deno.dev'
     },
-   
     {
       name: 'Calculator React',
       description: 'It is a simple calculator built using ReactJS',
@@ -123,7 +139,6 @@ const ProjectsPage = () => {
       githubLink: 'https://github.com/DJGuruji/Calculator',
       productionLink: 'https://djguruji.github.io/Calculator'
     },
-   
     {
       name: 'Calculato-JS',
       description: 'In my first project, I have ventured into the realm of web development by creating a simple yet functional calculator using HTML, CSS, and JavaScript. Through this endeavor, I have delved into the fundamentals of front-end design and programming, honing my skills in crafting user interfaces and implementing logic to perform basic arithmetic operations. From addition to division, my calculator offers a seamless experience for users to perform calculations effortlessly. This project marks the beginning of my journey in web development, providing me with valuable hands-on experience and paving the way for future endeavors in the field',
@@ -133,7 +148,6 @@ const ProjectsPage = () => {
     },
   ];
 
- 
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -143,14 +157,23 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <div className="h-full bg-black mx-auto p-8" >
-      <h1 className="text-3xl font-bold mb-8 text-yellow-300 text-center" data-aos="fade-down">
-      
-        Projects
-      </h1>
-      {projects.map((project, index) => (
-        <Project key={index} {...project} />
-      ))}
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6">
+      <div className="max-w-5xl mx-auto">
+        <h1 
+          className="text-4xl font-serif text-yellow-200 text-center mb-12 pb-4 border-b border-yellow-700/30" 
+          data-aos="fade-down"
+        >
+          Portfolio Projects
+        </h1>
+        
+        {projects.map((project, index) => (
+          <Project 
+            key={index} 
+            {...project} 
+            data-aos-delay={index * 50}
+          />
+        ))}
+      </div>
     </div>
   );
 };
