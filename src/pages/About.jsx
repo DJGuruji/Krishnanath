@@ -89,7 +89,7 @@ const About = () => {
       {/* Experience Section */}
       <div ref={internshipRef} className="pt-32 relative">
         <div className="flex flex-col items-center">
-          <SectionHeader title="Experience" />
+          <SectionHeader title="Professional Experience" />
           <div className="relative max-w-6xl mx-auto w-full pb-5 mt-8 flex flex-col justify-center items-center">
             <Internship />
           </div>

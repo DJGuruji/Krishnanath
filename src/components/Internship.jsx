@@ -114,12 +114,7 @@ const Internship = () => {
       {/* Decorative background element */}
       <div className="absolute inset-0 bg-yellow-500/2 backdrop-blur-3xl rounded-xl pointer-events-none"></div>
       
-      <h2 className="text-2xl font-serif text-yellow-200 mb-6 pb-2 border-b border-yellow-700/30 self-start pl-4 relative">
-        <span className="relative inline-block transform transition-transform duration-300 hover:translate-y-[-2px] cursor-default">
-          Professional Experience
-          <span className="absolute bottom-0 left-0 w-1/3 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-400/0"></span>
-        </span>
-      </h2>
+     
       
       {internships.map((internship, index) => (
         <InternshipCard key={index} internship={internship} index={index} />

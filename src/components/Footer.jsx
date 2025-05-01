@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { PiCoffeeFill } from "react-icons/pi";
 import { SiGmail } from "react-icons/si";
@@ -6,9 +6,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const SocialIcon = ({ href, icon: Icon, label }) => (
-  <a 
-    href={href} 
-    target="_blank" 
+  <a
+    href={href}
+    target="_blank"
     rel="noopener noreferrer"
     className="relative group"
     data-aos="zoom-in"
@@ -34,10 +34,22 @@ const Footer = () => {
 
   const socialLinks = [
     { href: "https://github.com/DJGuruji", icon: FaGithub, label: "GitHub" },
-    { href: "https://www.instagram.com/__krishnanath/profilecard/?igsh=eXF3NTM4YTdzMGo=", icon: FaInstagram, label: "Instagram" },
-    { href: "https://www.linkedin.com/in/krishnanath-s-24055a227", icon: FaLinkedinIn, label: "LinkedIn" },
+    {
+      href: "https://www.instagram.com/__krishnanath/profilecard/?igsh=eXF3NTM4YTdzMGo=",
+      icon: FaInstagram,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.linkedin.com/in/krishnanath-s-24055a227",
+      icon: FaLinkedinIn,
+      label: "LinkedIn",
+    },
     { href: "mailto:nath93266@gmail.com", icon: SiGmail, label: "Email" },
-    { href: "https://buymeacoffee.com/krishnanaths", icon: PiCoffeeFill, label: "Buy Me A Coffee" },
+    {
+      href: "https://buymeacoffee.com/krishnanaths",
+      icon: PiCoffeeFill,
+      label: "Buy Me A Coffee",
+    },
   ];
 
   return (
@@ -47,43 +59,45 @@ const Footer = () => {
         <div className="absolute top-0 left-1/4 w-80 h-80 bg-yellow-400/5 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-yellow-400/5 rounded-full filter blur-3xl"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <div className="text-center md:text-left" data-aos="fade-right">
+          <div
+            className="hidden md:block text-center md:text-left"
+            data-aos="fade-right"
+          >
             <h3 className="text-xl font-semibold text-yellow-400 font-playfair drop-shadow-lg">
               <span className="relative">
                 Krishnanath.S
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-500/0 via-yellow-500 to-yellow-500/0"></span>
               </span>
             </h3>
-            <p className="mt-2 text-sm text-zinc-400">Passionate about creating beautiful digital experiences</p>
+            <p className="mt-2 text-sm text-zinc-400">
+              Passionate about creating beautiful digital experiences
+            </p>
           </div>
-          
+
           <div className="flex space-x-6 items-center" data-aos="fade-left">
             {socialLinks.map((link, index) => (
-              <SocialIcon 
-                key={index} 
-                href={link.href} 
-                icon={link.icon} 
-                label={link.label} 
+              <SocialIcon
+                key={index}
+                href={link.href}
+                icon={link.icon}
+                label={link.label}
               />
             ))}
           </div>
         </div>
-        
+
         <div className="mt-8 border-t border-zinc-800/50 pt-8 flex flex-col md:flex-row justify-between items-center backdrop-blur-sm">
-          <p className="text-sm text-zinc-500">&copy; {currentYear} Krishnanath.S. All rights reserved.</p>
-          <div className="text-xs text-zinc-600 mt-4 md:mt-0 flex flex-wrap justify-center">
-            <span className="relative px-2 hover:text-zinc-400 transition-colors cursor-pointer">
-              Made with passion
-              <span className="absolute bottom-0 left-0 w-full h-px bg-zinc-700/30 scale-x-0 hover:scale-x-100 transition-transform"></span>
-            </span>
-          </div>
+          <p className="text-sm text-zinc-500">
+            &copy; {currentYear} Krishnanath.S. All rights reserved.
+          </p>
+        
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
