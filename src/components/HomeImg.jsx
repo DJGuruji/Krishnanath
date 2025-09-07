@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import img from "../img/krishna.png";
+import img1 from "../img/krishna.png";
+
 
 const HomeImg = () => {
   useEffect(() => {
@@ -15,9 +16,9 @@ const HomeImg = () => {
   return (
     <>
       {/* Mobile: full-screen hero image */}
-      <section className="md:hidden w-full h-[100svh] min-h-screen flex items-center justify-center bg-neutral-900">
+      <section className="md:hidden w-full h-[100svh] min-h-screen flex items-center justify-center bg-black/5">
         <img
-          src={img}
+          src={img1}
           alt="Portrait"
           className="max-h-[85vh] w-auto object-contain drop-shadow-xl"
           data-aos="fade-up"
@@ -30,7 +31,7 @@ const HomeImg = () => {
         data-aos="fade-right"
       >
         <img
-          src={img}
+          src={img1}
           alt="Portrait"
           className="max-h-[90vh] w-auto object-contain drop-shadow-2xl"
         />
