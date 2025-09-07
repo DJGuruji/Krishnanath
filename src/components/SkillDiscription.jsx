@@ -61,7 +61,7 @@ const SkillDiscription = () => {
     },
     {
       category: "Cloud Services",
-      skills: "Amazon Web Services (AWS), Deno Deploy, Vercel, Python Anywhere, Azure"
+      skills: "Amazon Web Services (AWS), Docker, Azure"
     },
     {
       category: "Programming Languages",

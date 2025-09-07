@@ -21,30 +21,23 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-      {/* 3D Background */}
+    <div className="min-h-screen bg-gradient-to-b from-neutral-950 to-neutral-900 text-neutral-100 relative overflow-x-hidden">
+      {/* Optional background (kept, but the overall look is classic/clean) */}
       {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/5 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/5 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none"></div>
-      
-      <div className="md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around items-center h-full relative z-10">
-        <div 
-          className="pt-10 flex justify-center items-center pl-5 transform transition-all duration-500 hover:scale-105"
-          data-aos="fade-right"
-        >
-          <HomeImg />
+
+      {/* Fixed image panel (desktop) + full-screen hero (mobile) */}
+      <HomeImg />
+
+      {/* Content area: shifts right on desktop to make room for fixed image */}
+      <main className="relative z-10 px-6 py-10 md:py-16 md:ml-[50vw]">
+        <div className="max-w-3xl mx-auto">
+          <section data-aos="fade-left">
+            <Discription />
+          </section>
         </div>
-        <div 
-          className="pb-5 flex flex-col justify-center items-center"
-          data-aos="fade-left"
-        >
-          <Discription />
-        </div>
-      </div>
-      
-      {/* Background Toggle */}
+      </main>
+
+      {/* Classic, minimal—no decorative blobs; keep the toggle if you want the 3D bg */}
       {mounted && <BackgroundToggle />}
     </div>
   );
