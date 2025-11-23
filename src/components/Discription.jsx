@@ -39,7 +39,7 @@ const Discription = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-12 pb-20 md:py-20 px-6 md:px-10 bg-gradient-to-b from-black to-zinc-900 relative overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-yellow-500/5 backdrop-blur-3xl"></div>

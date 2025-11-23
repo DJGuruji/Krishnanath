@@ -22,22 +22,23 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-950 to-neutral-900 text-neutral-100 relative overflow-x-hidden">
-      {/* Optional background (kept, but the overall look is classic/clean) */}
+      {/* Optional background */}
       {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
 
-      {/* Fixed image panel (desktop) + full-screen hero (mobile) */}
-      <HomeImg />
+      {/* Main content container - responsive flex layout */}
+      <main className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-6 py-12 lg:py-20">
+        {/* Image Section */}
+        <div className="flex-shrink-0" data-aos="fade-right">
+          <HomeImg />
+        </div>
 
-      {/* Content area: shifts right on desktop to make room for fixed image */}
-      <main className="relative z-10 px-6 py-10 md:py-16 md:ml-[50vw]">
-        <div className="max-w-3xl mx-auto">
-          <section data-aos="fade-left">
-            <Discription />
-          </section>
+        {/* Description Section */}
+        <div className="flex-1 max-w-3xl" data-aos="fade-left">
+          <Discription />
         </div>
       </main>
 
-      {/* Classic, minimal—no decorative blobs; keep the toggle if you want the 3D bg */}
+      {/* Background toggle */}
       {mounted && <BackgroundToggle />}
     </div>
   );
