@@ -82,10 +82,18 @@ const ProjectsPage = () => {
   const { showBackground, bgOpacity } = useBackground();
 
   const projects = [
+       {
+      name: "EchoStorm Mock Server and API Tester",
+      description:
+      "Built a full-fledged API testing suite that works much like Postman, complete with collections, environments, and detailed request history. It supports real-time API testing on localhost from production through a coordinated WebSocket relay, enabling seamless zero-configuration testing with automatic detection of local servers and built-in handling for CORS and mixed-content issues. The interface supports multiple tabs for managing concurrent requests, and the platform includes a full scripting engine that runs pre-request and post-response scripts using a Postman-compatible pm API with assertion support",
+      status: "completed",
+      githubLink: "https://github.com/DJGuruji/meshcore",
+      productionLink: "https://echostorm.vercel.app",
+    },
     {
       name: "Find My Client",
       description:
-        "Developed an AI-powered MERN stack application that connects skilled workers with clients, facilitating 100+ successful hires in just two months. The platform enables professionals to showcase their expertise by posting images and content related to their work, with media uploads optimized via Cloudinary, reducing load times by 40%. Users can connect with other professionals, follow profiles, and expand their network, fostering a dynamic professional community.",
+        "Built an AI-powered MERN stack application that connects skilled workers with clients, facilitating 100+ successful hires in just two months. The platform enables professionals to showcase their expertise by posting images and content related to their work, with media uploads optimized via Cloudinary, reducing load times by 40%. Users can connect with other professionals, follow profiles, and expand their network, fostering a dynamic professional community.",
       status: "completed",
       githubLink: "https://github.com/DJGuruji/fmcFrontend",
       productionLink: "https://fmc.deno.dev",
