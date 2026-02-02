@@ -76,11 +76,11 @@ const Discription = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="flex flex-wrap text-lg text-zinc-400 font-light"
           >
-            <span className="mr-2">Software Engineer</span>
+            <span className="mr-2">Lead Software Engineer</span>
             <span className="mr-2 text-yellow-400">|</span>
-            <span className="mr-2">Simplita.ai</span>
+            <span className="mr-2">IIC Lakshya </span>
             <span className="mr-2 text-yellow-400">|</span>
-            <span>Villupuram, Tamil Nadu</span>
+            <span>Kochi, Kerala</span>
           </motion.div>
 
           <motion.p 
@@ -91,7 +91,7 @@ const Discription = () => {
           >
             I'm a{" "}
             <span className="text-yellow-400 font-medium relative">
-              Full Stack Web Developer
+              Full Stack  Developer
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-500/50"></span>
             </span>{" "}
             with extensive experience in building and developing websites using

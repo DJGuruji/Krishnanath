@@ -82,13 +82,21 @@ const ProjectsPage = () => {
   const { showBackground, bgOpacity } = useBackground();
 
   const projects = [
-       {
-      name: "EchoStorm Mock Server and API Tester",
+    {
+      name: "AnyTimeRequest Mock Server and API Tester",
       description:
-      "Built a full-fledged API testing suite that works much like Postman, complete with collections, environments, and detailed request history. It supports real-time API testing on localhost from production through a coordinated WebSocket relay, enabling seamless zero-configuration testing with automatic detection of local servers and built-in handling for CORS and mixed-content issues. The interface supports multiple tabs for managing concurrent requests, and the platform includes a full scripting engine that runs pre-request and post-response scripts using a Postman-compatible pm API with assertion support",
+        "Built a full-fledged API testing suite that works much like Postman, complete with collections, environments, and detailed request history. It supports real-time API testing on localhost from production through a coordinated WebSocket relay, enabling seamless zero-configuration testing with automatic detection of local servers and built-in handling for CORS and mixed-content issues. The interface supports multiple tabs for managing concurrent requests, and the platform includes a full scripting engine that runs pre-request and post-response scripts using a Postman-compatible pm API with assertion support",
       status: "completed",
       githubLink: "https://github.com/DJGuruji/meshcore",
-      productionLink: "https://echostorm.vercel.app",
+      productionLink: "https://anytimerequest.com",
+    },
+        {
+      name: "Simplita.ai",
+      description:
+        "Developed AI-powered automation platforms to enhance business decision-making. Collaborated in an Agile Scrum environment to deliver user-focused features on time. Collaborated with cross-functional teams to integrate AI solutions into existing systems. Improved data processing efficiency, reducing computational costs and enhancing performance.",
+      status: "completed",
+      githubLink: "nil",
+      productionLink: "https://app.simplita.ai",
     },
     {
       name: "Find My Client",
@@ -107,20 +115,12 @@ const ProjectsPage = () => {
       productionLink: "https://vmas.deno.dev",
     },
     {
-      name: "Fake API Generator",
-      description:
-        "A powerful tool to quickly spin up unlimited projects with customizable endpoints. Each project can have multiple endpoints—ranging from public to authenticated—making it ideal for testing, prototyping, or simulating real-world API responses. Supports flexible endpoint structures, authentication options, and seamless scaling across projects, enabling developers to streamline backend development and focus on building features faster.",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/FakeApiGenerator",
-      productionLink: "https://knfakeapi.vercel.app",
-    },
-    {
       name: "Copy Cat",
       description:
         'A simple and efficient tool where users can provide their own key–value pairs and store them for easy retrieval. Designed as a lightweight "copy–paste manager," it helps users save frequently used snippets, configs, or text blocks, making them instantly reusable whenever needed.',
       status: "completed",
       githubLink: "https://github.com/DJGuruji/copypaster",
-      productionLink: "https://kncopypaste.vercel.app",
+      productionLink: "https://copycat.anytimerequest.com",
     },
     {
       name: "Knnote",
@@ -155,38 +155,7 @@ const ProjectsPage = () => {
       githubLink: "https://github.com/DJGuruji/MedicalAppointment",
       productionLink: "nil",
     },
-    {
-      name: "KEAM Mock Entrance Web",
-      description:
-        "Developed a React-based mock entrance exam platform with subject-specific quizzes and a real-time timer, attracting over 200 participants in 2024. Optimized the platform for scalability, enabling it to handle concurrent users without lag",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/EntranceReact",
-      productionLink: "https://keammock.deno.dev",
-    },
-    {
-      name: "Complaint Management System",
-      description:
-        "Designed and implemented a comprehensive complaint management system for college use, leveraging React.js and Tailwind CSS. Provided features for real-time tracking, complaint submission, and admin management, improving resolution efficiency by 30%",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/cmsfront",
-      productionLink: "https://cmsreact.deno.dev",
-    },
-    {
-      name: "Complaint Portal",
-      description:
-        "Enter the realm of efficient complaint resolution with our online portal, meticulously constructed using HTML5, Tailwind CSS, and JavaScript. Designed to streamline the complaint handling process, our platform offers comprehensive features tailored for administrators, including settings management and branch addition functionalities. Administrators can effortlessly navigate through options such as adding branches, configuring settings, and more, ensuring smooth operation and customization of the portal. With intuitive design and seamless functionality, our platform empowers administrators to efficiently manage complaints and deliver prompt resolutions. Experience the pinnacle of complaint management efficiency with our online portal, built to simplify administrative tasks and enhance user satisfaction.",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/Complaint-portal",
-      productionLink: "https://djguruji.github.io/Complaint-portal/dist/",
-    },
-    {
-      name: "Bookmark",
-      description:
-        "Developed a dynamic bookmarking application using React, allowing users to save and manage their favorite links effectively. The app displays each bookmark with the date it was added and provides options for users to update existing links. With an intuitive interface, users can easily organize and edit their bookmarks, creating a streamlined experience for tracking and accessing frequently visited sites",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/Bookmark",
-      productionLink: "https://gbookmark.deno.dev",
-    },
+
     {
       name: "Password Generator",
       description:
@@ -195,28 +164,13 @@ const ProjectsPage = () => {
       githubLink: "https://github.com/DJGuruji/PasswordGenerator",
       productionLink: "https://passwordgenerator.deno.dev",
     },
-    {
-      name: "Calculator React",
-      description: "It is a simple calculator built using ReactJS",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/Calculator",
-      productionLink: "https://djguruji.github.io/Calculator",
-    },
-    {
-      name: "Calculato-JS",
-      description:
-        "In my first project, I have ventured into the realm of web development by creating a simple yet functional calculator using HTML, CSS, and JavaScript. Through this endeavor, I have delved into the fundamentals of front-end design and programming, honing my skills in crafting user interfaces and implementing logic to perform basic arithmetic operations. From addition to division, my calculator offers a seamless experience for users to perform calculations effortlessly. This project marks the beginning of my journey in web development, providing me with valuable hands-on experience and paving the way for future endeavors in the field",
-      status: "completed",
-      githubLink: "https://github.com/DJGuruji/Calculator-js",
-      productionLink: "https://djguruji.github.io/Calculator-js/",
-    },
   ];
 
   // Filter projects by name OR status
   const filteredProjects = projects.filter(
     (project) =>
       project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.status.toLowerCase().includes(searchTerm.toLowerCase())
+      project.status.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   useEffect(() => {
