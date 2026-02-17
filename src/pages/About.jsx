@@ -15,27 +15,27 @@ import AOS from "aos";
 const NavButton = ({ icon: Icon, text, onClick }) => (
   <button 
     data-aos="zoom-in"
-    className="flex items-center bg-black font-bold px-1 md:px-3 py-2 rounded-md 
-    hover:rounded-xl border-2 border-yellow-700/40 hover:border-yellow-500 
-    transform hover:translate-y-[-3px] hover:shadow-lg hover:shadow-yellow-600/20 transition-all duration-300 relative overflow-hidden group"
+    className="flex items-center glass-card font-black px-6 py-3 rounded-full 
+    text-[10px] uppercase tracking-[0.2em] text-zinc-400
+    hover:text-white hover:border-red-500/50 
+    hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,49,49,0.2)] transition-all duration-300 group"
     onClick={onClick}
   >
-    <div className="absolute inset-0 bg-yellow-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 rounded-md"></div>
-    <Icon className="m-1 relative z-10" />
-    <span className="relative z-10">{text}</span>
+    <Icon className="mr-3 scale-125 group-hover:text-red-500 transition-colors" />
+    <span>{text}</span>
   </button>
 );
 
 const SectionHeader = ({ title }) => (
-  <h1 
-    className="text-xl text-yellow-300 text-center font-bold pt-8 relative inline-block mx-auto"
-    data-aos="zoom-in"
-  >
-    <span className="relative">
+  <div className="flex flex-col items-center gap-4 mb-16" data-aos="fade-down">
+    <div className="flex items-center gap-4">
+      <span className="w-12 h-[2px] bg-red-600"></span>
+      <span className="text-red-500 uppercase tracking-widest text-xs font-bold">Details</span>
+    </div>
+    <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
       {title}
-      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-500/0 via-yellow-500 to-yellow-500/0"></span>
-    </span>
-  </h1>
+    </h1>
+  </div>
 );
 
 const About = () => {
@@ -48,89 +48,62 @@ const About = () => {
   useEffect(() => {
     setMounted(true);
     AOS.init({
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out",
       once: true,
     });
   }, []);
 
-  const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToSection = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-      {/* 3D Background */}
+    <div className="min-h-screen bg-black text-white py-24 relative overflow-hidden">
       {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
       
-      {/* Fixed Navigation */}
-      <div className="fixed top-12 left-0 w-full text-white flex justify-around py-4 z-40 backdrop-blur-sm bg-black/30">
-        <NavButton 
-          icon={RiVerifiedBadgeFill} 
-          text="Experience" 
-          onClick={() => scrollToSection(internshipRef)} 
-        />
-        <NavButton 
-          icon={PiCertificateFill} 
-          text="Certifications" 
-          onClick={() => scrollToSection(certificationRef)} 
-        />
-        <NavButton 
-          icon={IoSchool} 
-          text="Education" 
-          onClick={() => scrollToSection(degreeRef)} 
-        />
+      {/* Floating Navigation */}
+      <div className="fixed bottom-12 left-1/2 -translate-x-1/2 flex gap-4 z-50 px-6 py-4 glass-card rounded-full border border-white/5 backdrop-blur-2xl shadow-2xl">
+        <NavButton icon={RiVerifiedBadgeFill} text="EXP" onClick={() => scrollToSection(internshipRef)} />
+        <NavButton icon={PiCertificateFill} text="CERT" onClick={() => scrollToSection(certificationRef)} />
+        <NavButton icon={IoSchool} text="EDU" onClick={() => scrollToSection(degreeRef)} />
       </div>
 
-      {/* Experience Section */}
-      <div ref={internshipRef} className="pt-32 relative">
-        <div className="flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Experience Section */}
+        <div ref={internshipRef} className="py-20 relative">
           <SectionHeader title="Professional Experience" />
-          <div className="relative max-w-6xl mx-auto w-full pb-5 mt-8 flex flex-col justify-center items-center">
+          <div className="relative w-full">
             <Internship />
           </div>
         </div>
-      </div>
 
-      {/* Certifications Section */}
-      <div ref={certificationRef} className="pt-20 relative">
-        <div className="flex flex-col items-center">
+        {/* Certifications Section */}
+        <div ref={certificationRef} className="py-20 relative">
           <SectionHeader title="Certifications" />
-          <div className="relative max-w-6xl mx-auto w-full md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
-            <div className="pb-5 mt-8 flex flex-col justify-center items-center w-full">
-              <Certification />
-            </div>
+          <div className="relative w-full">
+            <Certification />
           </div>
         </div>
-      </div>
-      
-      {/* Education Section */}
-      <div ref={degreeRef} className="pt-20 relative">
-        <div className="flex flex-col items-center">
+        
+        {/* Education Section */}
+        <div ref={degreeRef} className="py-20 mb-20 relative">
           <SectionHeader title="Education" />
-          <div className="relative max-w-6xl mx-auto w-full md:flex lg:flex xl:flex md:justify-around lg:justify-around xl:justify-around">
-            <div className="pb-24 mt-8 flex flex-col justify-center items-center w-full">
-              <AboutDiscription />
-            </div>
+          <div className="relative w-full">
+            <AboutDiscription />
           </div>
         </div>
       </div>
 
       {/* Scroll to Top Button */}
-      <div className="fixed bottom-5 left-5 z-40">
+      <div className="fixed bottom-12 left-12 z-40 hidden md:block">
         <button 
-          className="bg-yellow-800 hover:bg-yellow-700 text-yellow-200 p-3 rounded-full shadow-lg transform hover:scale-110 transition-all duration-300 hover:shadow-yellow-600/20 hover:shadow-md"
+          className="glass-card hover:bg-white/10 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
           onClick={scrollToTop}
         >
-          <BiSolidUpArrowCircle className="text-2xl" />
+          <BiSolidUpArrowCircle className="text-3xl" />
         </button>
       </div>
 
-      {/* Background Toggle */}
       {mounted && <BackgroundToggle />}
     </div>
   );

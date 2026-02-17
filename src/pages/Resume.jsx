@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import ThreeBackground from "../components/ThreeBackground";
 import BackgroundToggle from "../components/BackgroundToggle";
 import { useBackground } from "../context/BackgroundContext";
+import { FaEye, FaDownload } from "react-icons/fa";
 
 const Resume = () => {
   const pdfUrl = "/Krishnanaths_Resume.pdf";
@@ -14,7 +15,7 @@ const Resume = () => {
   useEffect(() => {
     setMounted(true);
     AOS.init({
-      duration: 1500,
+      duration: 1000,
       easing: "ease-in-out",
       once: true,
     });
@@ -27,59 +28,47 @@ const Resume = () => {
     link.click();
   };
 
-  const handlePreview = () => {
-    setShowPreview(true); 
-  };
-
-  const handleClosePreview = () => {
-    setShowPreview(false); 
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white py-12 px-6 flex flex-col items-center relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white py-24 px-6 flex flex-col items-center relative overflow-hidden">
       {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
       
       <div className="max-w-4xl w-full relative z-10">
-        <h1 
-          className="text-4xl font-serif text-yellow-200 text-center mb-12 pb-4 border-b border-yellow-700/30"
-          data-aos="fade-down"
-        >
-          Professional Resume
-        </h1>
+        <div className="space-y-4 mb-20 text-center" data-aos="fade-down">
+          <div className="flex items-center justify-center gap-4">
+            <span className="w-12 h-[2px] bg-red-600"></span>
+            <span className="text-red-500 uppercase tracking-widest text-sm font-bold">Credential</span>
+            <span className="w-12 h-[2px] bg-red-600"></span>
+          </div>
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
+            Professional <br /> <span className="text-gradient">Resume</span>
+          </h1>
+        </div>
         
         <div 
-          className="border border-yellow-200 p-8 bg-gradient-to-b from-gray-900 to-black rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 mb-8 flex flex-col items-center backdrop-blur-sm"
+          className="glass-card p-12 flex flex-col items-center text-center relative overflow-hidden"
           data-aos="fade-up"
         >
-          <p className="text-gray-300 leading-relaxed mb-8 text-center max-w-2xl">
-            View or download my comprehensive resume highlighting my skills, experiences, and qualifications in the field of software development.
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-600/10 rounded-full blur-[80px]"></div>
+          
+          <p className="text-zinc-500 leading-relaxed mb-12 max-w-2xl font-medium uppercase tracking-widest text-xs">
+            View or download my comprehensive resume highlighting my technical expertise, professional journey, and software engineering qualifications.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-5 mt-4">
+          <div className="flex flex-col sm:flex-row gap-6">
             <button
-              onClick={handlePreview}
-              className="px-6 py-3 bg-gradient-to-r from-yellow-900 to-yellow-800 text-yellow-200 border border-yellow-700 rounded-md hover:shadow-md hover:shadow-yellow-900/40 transition-all duration-300 flex items-center gap-2"
-              data-aos="fade-right"
-              data-aos-delay="100"
+              onClick={() => setShowPreview(true)}
+              className="px-10 py-4 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center gap-3 shadow-2xl"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-eye" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
-                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
-              </svg>
-              Preview Resume
+              <FaEye className="text-lg" />
+              Preview Document
             </button>
 
             <button
               onClick={handleDownload}
-              className="px-6 py-3 bg-yellow-800/30 border border-yellow-700 text-yellow-200 rounded-md hover:bg-yellow-800/50 transition-all duration-300 flex items-center gap-2"
-              data-aos="fade-left"
-              data-aos-delay="150"
+              className="px-10 py-4 border border-white/10 text-white text-[10px] font-black uppercase tracking-widest rounded-full hover:border-red-500/50 hover:bg-red-600/10 transition-all duration-300 flex items-center gap-3"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-download" viewBox="0 0 16 16">
-                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-              </svg>
-              Download Resume
+              <FaDownload className="text-lg" />
+              Download PDF
             </button>
           </div>
         </div>
@@ -88,13 +77,13 @@ const Resume = () => {
       {mounted && <BackgroundToggle />}
 
       {showPreview && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-gradient-to-b from-gray-900 to-black border border-yellow-700 rounded-lg w-full max-w-4xl h-[85vh] flex flex-col">
-            <div className="p-4 border-b border-yellow-700/30 flex justify-between items-center">
-              <h2 className="text-xl font-serif text-yellow-200">Resume Preview</h2>
+        <div className="fixed inset-0 bg-black/95 backdrop-blur-2xl flex items-center justify-center z-[200] p-6 lg:p-12">
+          <div className="glass-card w-full max-w-5xl h-full flex flex-col relative overflow-hidden">
+            <div className="p-6 border-b border-white/5 flex justify-between items-center">
+              <h2 className="text-xs font-black uppercase tracking-[0.3em] text-zinc-400">Credential Preview</h2>
               <button
-                onClick={handleClosePreview}
-                className="h-8 w-8 flex items-center justify-center rounded-full bg-yellow-900/20 text-yellow-300 hover:bg-yellow-900/40 transition-colors"
+                onClick={() => setShowPreview(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-white hover:bg-red-600 transition-all text-xl font-bold"
               >
                 &times;
               </button>
@@ -102,7 +91,7 @@ const Resume = () => {
             <iframe
               src={pdfUrl}
               title="Resume Preview"
-              className="flex-1 w-full rounded-b-lg"
+              className="flex-1 w-full"
             ></iframe>
           </div>
         </div>

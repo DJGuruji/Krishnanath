@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Routes, Route, useNavigate } from "react-router-dom"; // Import NavLink
+import { NavLink, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Service from "../pages/Service";
@@ -7,251 +7,107 @@ import Projects from "../pages/Projects";
 import Skills from "../pages/Skills";
 import NotFound from "../pages/PNF";
 import Resume from "../pages/Resume";
-import { FaHome } from "react-icons/fa";
-import { FaFileAlt } from "react-icons/fa";
-import { MdOutlineMiscellaneousServices } from "react-icons/md";
-import { FaDiagramProject } from "react-icons/fa6";
-import { GiSkills } from "react-icons/gi";
-import { BiSolidUserBadge } from "react-icons/bi";
 import Contact from "../pages/Contact";
+import { FaHome, FaUserCircle, FaLaptopCode, FaProjectDiagram, FaFileAlt, FaEnvelope } from "react-icons/fa";
+
 const HomeRouter = () => {
   const [dropdown, setDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
+      setScrolled(window.scrollY > 20);
     };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    document.addEventListener('scroll', handleScroll);
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
-
-  const handleDropdown = () => {
-    setDropdown(!dropdown);
-  };
-
-  const handleItemClick = () => {
-    setDropdown(false);
-  };
+  const menuItems = [
+    { name: "Home", path: "/", icon: <FaHome /> },
+    { name: "About", path: "/about", icon: <FaUserCircle /> },
+    { name: "Skills", path: "/skills", icon: <FaLaptopCode /> },
+    { name: "Services", path: "/service", icon: <FaLaptopCode /> },
+    { name: "Projects", path: "/projects", icon: <FaProjectDiagram /> },
+    { name: "Resume", path: "/resume", icon: <FaFileAlt /> },
+    { name: "Contact", path: "/contact", icon: <FaEnvelope /> },
+  ];
 
   return (
     <>
-      <nav className={`sticky z-50 top-0 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-black'} h-16 border-b border-zinc-800 relative w-full`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <h1 className="text-yellow-400 text-2xl font-bold font-slab flex items-center">
-              <NavLink
-                to="/"
-                onClick={handleItemClick}
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Krishnanath.S
-              </NavLink>
+      <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+        scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"
+      }`}>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <NavLink to="/" className="group">
+            <h1 className="text-2xl font-black tracking-tighter font-outfit text-white">
+              KRISHNA<span className="text-red-600 group-hover:text-red-500 transition-colors">NATH</span>
             </h1>
+          </NavLink>
 
-            <div className="md:flex hidden">
-              <ul className="flex space-x-1 text-lg">
-                <li>
-                  <NavLink
-                    to="/"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <FaHome className="mr-1" />
-                    Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/about"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <FaFileAlt className="mr-1" />
-                    About
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/skills"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <GiSkills className="mr-1" />
-                    Skills
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/service"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <MdOutlineMiscellaneousServices className="mr-1" />
-                    Services
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/projects"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <FaDiagramProject className="mr-1" />
-                    Projects
-                  </NavLink>
-                </li>
-       
-                <li>
-                  <NavLink
-                    to="/resume"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <BiSolidUserBadge className="mr-1" />
-                    Resume
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/contact"
-                    onClick={handleItemClick}
-                    className={({ isActive }) =>
-                      isActive ? "nav-link active flex items-center px-3 py-2" : "nav-link flex items-center px-3 py-2"
-                    }
-                  >
-                    <BiSolidUserBadge className="mr-1" />
-                    Contact
-                  </NavLink>
-                </li>
-            
-              </ul>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                className="flex flex-col items-center justify-center p-2 rounded-md text-yellow-400 focus:outline-none"
-                onClick={handleDropdown}
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.path}
+                className={({ isActive }) => `
+                  text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300
+                  ${isActive ? "text-red-500" : "text-zinc-400 hover:text-white"}
+                `}
               >
-                <span className={`w-6 h-0.5 bg-current mb-1.5 transition-all duration-300 ${dropdown ? 'transform rotate-45 translate-y-2' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-current transition-all duration-300 ${dropdown ? 'opacity-0' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-current mt-1.5 transition-all duration-300 ${dropdown ? 'transform -rotate-45 -translate-y-2' : ''}`}></span>
-              </button>
-            </div>
+                {item.name}
+              </NavLink>
+            ))}
+           
           </div>
+
+          {/* Mobile Toggle */}
+          <button 
+            className="lg:hidden text-white"
+            onClick={() => setDropdown(!dropdown)}
+          >
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <span className={`w-full h-[2px] bg-white transition-all ${dropdown ? "rotate-45 translate-y-[9px]" : ""}`}></span>
+              <span className={`w-full h-[2px] bg-white transition-all ${dropdown ? "opacity-0" : ""}`}></span>
+              <span className={`w-full h-[2px] bg-white transition-all ${dropdown ? "-rotate-45 -translate-y-[9px]" : ""}`}></span>
+            </div>
+          </button>
         </div>
 
-        {/* Mobile menu dropdown */}
-        {dropdown && (
-          <div
-            className="absolute w-full md:hidden bg-zinc-900/95 backdrop-blur-sm border-b border-zinc-800 shadow-xl transition-all duration-300 slide-up"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        {/* Mobile menu */}
+        <div className={`lg:hidden fixed inset-0 top-[72px] bg-black/95 backdrop-blur-2xl transition-all duration-500 ${
+          dropdown ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        }`}>
+          <div className="flex flex-col items-center justify-center h-full space-y-8 p-6">
+            {menuItems.map((item) => (
               <NavLink
-                to="/"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
+                key={item.name}
+                to={item.path}
+                onClick={() => setDropdown(false)}
+                className={({ isActive }) => `
+                  text-2xl font-black uppercase tracking-widest transition-all
+                  ${isActive ? "text-red-600 scale-110" : "text-zinc-600"}
+                `}
               >
-                <FaHome className="mr-2" />
-                Home
+                {item.name}
               </NavLink>
-              <NavLink
-                to="/about"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
-              >
-                <FaFileAlt className="mr-2" />
-                About
-              </NavLink>
-              <NavLink
-                to="/skills"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
-              >
-                <GiSkills className="mr-2" />
-                Skills
-              </NavLink>
-              <NavLink
-                to="/service"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
-              >
-                <MdOutlineMiscellaneousServices className="mr-2" />
-                Services
-              </NavLink>
-              <NavLink
-                to="/projects"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
-              >
-                <FaDiagramProject className="mr-2" />
-                Projects
-              </NavLink>
-              <NavLink
-                to="/resume"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
-              >
-                <BiSolidUserBadge className="mr-2" />
-                Resume
-              </NavLink>
-              <NavLink
-                to="/contact"
-                onClick={handleItemClick}
-                className={({ isActive }) =>
-                  isActive ? "nav-link active flex items-center px-3 py-3" : "nav-link flex items-center px-3 py-3"
-                }
-              >
-                <FaDiagramProject className="mr-2" />
-                Contact
-              </NavLink>
-            </div>
+            ))}
           </div>
-        )}
+        </div>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="pt-20">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </>
   );
 };

@@ -10,12 +10,11 @@ const SocialIcon = ({ href, icon: Icon, label }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="relative group"
+    className="relative group p-2 transition-all duration-300 transform hover:-translate-y-1"
     data-aos="zoom-in"
   >
-    <span className="sr-only">{label}</span>
-    <div className="absolute inset-0 bg-yellow-400/20 rounded-full scale-0 group-hover:scale-150 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-    <div className="relative z-10 text-zinc-400 group-hover:text-yellow-400 transition-colors duration-300 transform group-hover:translate-y-[-3px] p-2">
+    <div className="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/20 rounded-xl transition-all duration-300 blur-lg scale-150"></div>
+    <div className="relative z-10 text-zinc-500 group-hover:text-red-500 transition-colors duration-300">
       <Icon className="h-6 w-6" />
     </div>
   </a>
@@ -53,47 +52,44 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-zinc-900 to-black border-t border-zinc-800 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-80 h-80 bg-yellow-400/5 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-yellow-400/5 rounded-full filter blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <div
-            className="hidden md:block text-center md:text-left"
-            data-aos="fade-right"
-          >
-            <h3 className="text-xl font-semibold text-yellow-400 font-playfair drop-shadow-lg">
-              <span className="relative">
-                Krishnanath.S
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-500/0 via-yellow-500 to-yellow-500/0"></span>
-              </span>
+    <footer className="bg-black border-t border-white/5 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6" data-aos="fade-right">
+            <h3 className="text-2xl font-black font-outfit text-white tracking-tighter uppercase">
+              KRISHNA<span className="text-red-600">NATH</span>
             </h3>
-            <p className="mt-2 text-sm text-zinc-400">
-              Passionate about creating beautiful digital experiences
+            <p className="text-zinc-600 max-w-xs font-medium uppercase tracking-widest text-[10px] leading-relaxed">
+              Crafting state-of-the-art digital experiences with precision and speed.
             </p>
           </div>
 
-          <div className="flex space-x-6 items-center" data-aos="fade-left">
-            {socialLinks.map((link, index) => (
-              <SocialIcon
-                key={index}
-                href={link.href}
-                icon={link.icon}
-                label={link.label}
-              />
-            ))}
+          <div className="hidden lg:block"></div>
+          <div className="hidden lg:block"></div>
+
+          <div className="space-y-6 flex flex-col items-start md:items-end" data-aos="fade-left">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Social Connections</h4>
+            <div className="flex gap-4">
+              {socialLinks.map((link, index) => (
+                <SocialIcon
+                  key={index}
+                  href={link.href}
+                  icon={link.icon}
+                  label={link.label}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-zinc-800/50 pt-8 flex flex-col md:flex-row justify-between items-center backdrop-blur-sm">
-          <p className="text-sm text-zinc-500">
-            &copy; {currentYear} Krishnanath.S. All rights reserved.
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-700">
+            &copy; {currentYear} KRISHNANATH.S • ALL RIGHTS RESERVED
           </p>
-        
+          <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-black text-zinc-500">
+            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
+            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
+          </div>
         </div>
       </div>
     </footer>

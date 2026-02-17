@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SkillDiscription from "../components/SkillDiscription";
-// import AboutImg from "../components/AboutImg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ThreeBackground from "../components/ThreeBackground";
@@ -20,30 +19,25 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 py-12 relative overflow-hidden">
-      {/* Only render Three.js background after component mounts to prevent SSR issues */}
+    <div className="min-h-screen bg-black py-24 px-6 relative overflow-hidden">
       {mounted && showBackground && <ThreeBackground opacity={bgOpacity} />}
       
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
-          <div className="w-full md:w-1/4 flex flex-col items-center md:items-start">
-            <h1 
-              data-aos="fade-right" 
-              className="text-3xl md:text-4xl font-serif text-yellow-200 pb-3 border-b border-yellow-700/30"
-            >
-              SKILLS
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col gap-16">
+          <div className="space-y-4" data-aos="fade-down">
+            <div className="flex items-center gap-4">
+              <span className="w-12 h-[2px] bg-red-600"></span>
+              <span className="text-red-500 uppercase tracking-widest text-sm font-bold">Expertise</span>
+            </div>
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8]">
+              Technical <br /> <span className="text-gradient">Abilities</span>
             </h1>
-            
-            <p 
-              data-aos="fade-right" 
-              data-aos-delay="100" 
-              className="mt-6 text-gray-300 leading-relaxed hidden md:block"
-            >
-              A showcase of my technical expertise and professional capabilities that I've developed throughout my career.
+            <p className="mt-8 text-zinc-500 max-w-xl font-medium uppercase tracking-[0.2em] text-xs">
+              A curated showcase of my technical expertise and professional capabilities developed throughout my software engineering career.
             </p>
           </div>
           
-          <div className="w-full md:w-3/4">
+          <div className="w-full" data-aos="fade-up">
             <SkillDiscription />
           </div>
         </div>

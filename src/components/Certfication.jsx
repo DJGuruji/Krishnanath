@@ -1,78 +1,52 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
 
 const CertificationCard = ({ cert, index }) => {
   return (
     <div
       key={index}
-      className="border border-yellow-200 p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 group transition-all duration-300 relative overflow-hidden transform hover:-translate-y-1"
+      className="glass-card p-8 group relative overflow-hidden transition-all duration-500 hover:border-red-500/30"
       data-aos="fade-up"
       data-aos-delay={index * 100}
     >
-      {/* Decorative elements */}
-      <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-yellow-400/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute -top-12 -right-12 w-24 h-24 bg-red-600/5 rounded-full blur-2xl group-hover:bg-red-600/10 transition-all duration-700"></div>
       
-      <div className="flex flex-col space-y-4">
-        <div className="border-b border-yellow-700/30 pb-3 relative">
-          <h3 className="text-xl font-serif text-yellow-200 group-hover:text-yellow-300 transition-colors">
-            {cert.name}
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-yellow-500/0 group-hover:w-full transition-all duration-500 ease-out"></span>
-          </h3>
-          <p className="text-yellow-100/70 text-sm mt-1 italic">
-            <span className="inline-flex items-center">
-              <span className="w-1.5 h-1.5 bg-yellow-500/70 rounded-full inline-block mr-1.5"></span>
-              Issued by {cert.organization}
-            </span>
-            <span className="mx-2 text-yellow-600">•</span>
-            <span className="text-yellow-100/60">{cert.issueDate}</span>
-          </p>
+      <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-3">
+            <FaCertificate className="text-red-600 text-sm" />
+            <h3 className="text-xl font-black text-white font-outfit uppercase tracking-tighter transition-colors group-hover:text-red-500">
+              {cert.name}
+            </h3>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-black uppercase tracking-widest text-zinc-500">
+            <span className="text-zinc-400">Issued by {cert.organization}</span>
+            <span className="w-1 h-1 bg-zinc-800 rounded-full hidden md:block"></span>
+            <span>{cert.issueDate}</span>
+          </div>
         </div>
-        
-        <div className="overflow-x-auto">
-          <table className="table-auto w-full text-white text-sm sm:text-base">
-            <tbody>
-              <tr className="hover:bg-yellow-900/10 transition-colors duration-200">
-                <td className="py-2 text-left text-yellow-300 font-medium w-1/4 relative group/item">
-                  Credential ID
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-yellow-400/30 group-hover/item:w-full transition-all duration-300"></span>
-                </td>
-                <td className="py-2 text-left text-gray-200 font-mono text-sm tracking-wider">
-                  {cert.credentialId}
-                </td>
-              </tr>
-              <tr className="hover:bg-yellow-900/10 transition-colors duration-200">
-                <td className="py-2 text-left text-yellow-300 font-medium align-top relative group/item">
-                  Verify
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-yellow-400/30 group-hover/item:w-full transition-all duration-300"></span>
-                </td>
-                <td className="py-2 text-left text-gray-200">
-                  {cert.credentialUrl ? (
-                    <a
-                      href={cert.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-yellow-200 hover:text-yellow-400 transition-colors underline decoration-dotted underline-offset-4 inline-flex items-center group/link"
-                    >
-                      <span>View Certificate</span>
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        className="h-3.5 w-3.5 ml-1 transform group-hover/link:translate-x-0.5 transition-transform" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </a>
-                  ) : (
-                    <span className="text-gray-500 italic">Not Available</span>
-                  )}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+        <div className="flex flex-col items-start md:items-end gap-3 min-w-fit">
+          <div className="flex flex-col items-start md:items-end">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 mb-1">Credential ID</span>
+            <span className="text-[10px] font-mono text-zinc-400 tracking-wider bg-white/5 px-2 py-1 rounded">
+              {cert.credentialId}
+            </span>
+          </div>
+          
+          {cert.credentialUrl && (
+            <a
+              href={cert.credentialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-red-500 hover:text-red-400 transition-all group/link"
+            >
+              <span>Verify License</span>
+              <FaExternalLinkAlt className="text-xs transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -108,14 +82,14 @@ const Certification = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1000,
       easing: "ease-in-out",
       once: true,
     });
   }, []);
 
   return (
-    <div className="space-y-8 px-4 sm:px-8">
+    <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto">
       {certifications.map((cert, index) => (
         <CertificationCard key={index} cert={cert} index={index} />
       ))}

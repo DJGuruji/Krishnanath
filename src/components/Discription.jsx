@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
+const Discription = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -14,108 +16,77 @@ const ImagLink = ({ src, alt, href, isHovered, handleHover }) => {
   }, []);
 
   return (
-    <span className="overflow-hidden rounded-full border border-zinc-700 ml-4 shadow-md transform hover:translate-y-[-5px] transition-all hover:shadow-yellow-500/20 hover:shadow-lg">
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        <img
-          src={src}
-          alt={alt}
-          className={`rounded-full transition-all duration-300 ${
-            isHovered ? "w-12 h-12 scale-110" : "w-10 h-10"
-          }`}
-          onMouseEnter={handleHover}
-          onMouseLeave={handleHover}
-        />
-      </a>
-    </span>
-  );
-};
-
-const Discription = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleHover = () => {
-    setIsHovered(!isHovered);
-  };
-  const navigate = useNavigate();
-
-  return (
-    <section className="relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-yellow-500/5 backdrop-blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-64 h-64 rounded-full bg-yellow-500/5 backdrop-blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-yellow-400/10 backdrop-blur-3xl"></div>
-      </div>
-      
+    <section className="relative overflow-hidden py-12 lg:py-0">
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="space-y-6" data-aos="fade-up">
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+        <div className="space-y-8" data-aos="fade-up">
+          
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-sans text-xl font-medium text-yellow-400 text-shadow"
+            className="flex items-center gap-4"
           >
-            Hello!
-          </motion.h2>
-
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold text-white font-playfair drop-shadow-xl"
-          >
-            I am <span className="text-yellow-400 relative">
-              Krishnanath S
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500/0 via-yellow-500 to-yellow-500/0 transform translate-y-1"></span>
+            <span className="w-12 h-[2px] bg-red-600"></span>
+            <span className="text-red-500 uppercase tracking-[0.3em] text-sm font-bold">
+              Lead Software Engineer
             </span>
-          </motion.h1>
+          </motion.div>
+
+          <div className="space-y-4">
+          
+
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[0.9] tracking-tighter"
+            >
+              KRISHNA <span className="text-red-600">NATH</span>
+            </motion.h1>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="flex flex-wrap text-lg text-zinc-400 font-light"
+            transition={{ duration: 1, delay: 0.6 }}
+            className="flex flex-wrap gap-x-6 gap-y-2 text-zinc-500 font-medium uppercase tracking-widest text-xs lg:text-sm"
           >
-            <span className="mr-2">Lead Software Engineer</span>
-            <span className="mr-2 text-yellow-400">|</span>
-            <span className="mr-2">IIC Lakshya </span>
-            <span className="mr-2 text-yellow-400">|</span>
+            <span>Indian Institute of Technology, Lakshya</span>
+            <span className="text-red-600">•</span>
+            <span>Lead Full Stack Developer</span>
+            <span className="text-red-600">•</span>
             <span>Kochi, Kerala</span>
           </motion.div>
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl text-zinc-300 leading-relaxed mt-8 max-w-3xl backdrop-blur-sm bg-black/5 p-4 rounded-md"
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-lg lg:text-xl text-zinc-400 leading-relaxed max-w-2xl font-light"
           >
-            I'm a{" "}
-            <span className="text-yellow-400 font-medium relative">
-              Full Stack  Developer
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-500/50"></span>
-            </span>{" "}
-            with extensive experience in building and developing websites using
-            the MERN stack, Django, FastAPI and Next.js.
+            Crafting high-performance web experiences with the{" "}
+            <span className="text-white font-semibold">MERN Stack, Django, and Next.js.</span>{" "}
+            Passionate about building modern, scalable, and user-centric applications.
           </motion.p>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-8 mb-8 hidden md:flex"
+            transition={{ duration: 0.8, delay: 1 }}
+            className="flex flex-wrap gap-4 pt-4"
           >
             <button
-              className="btn-primary transform hover:translate-y-[-3px] hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300"
+              className="btn-modern"
               onClick={() => navigate("/projects")}
             >
-              View My Work
+              View Projects
             </button>
 
             <button
-              className="ml-4 px-6 py-2 bg-transparent text-yellow-400 font-semibold rounded-sm border border-yellow-500 hover:bg-yellow-500/10 transition-all duration-300 transform hover:translate-y-[-3px] hover:shadow-lg hover:shadow-yellow-500/20"
+              className="btn-outline"
               onClick={() => navigate("/contact")}
             >
-              Contact Me
+              Get In Touch
             </button>
           </motion.div>
         </div>

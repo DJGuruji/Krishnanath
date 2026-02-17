@@ -3,7 +3,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import img1 from "../img/krishna.jpg";
 
-
 const HomeImg = () => {
   useEffect(() => {
     AOS.init({
@@ -14,28 +13,32 @@ const HomeImg = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center py-8 md:py-12 px-4">
+    <div className="flex items-center justify-center py-8 md:py-12 px-4 relative">
       <div 
-        className="relative group"
+        className="relative group animate-float"
         data-aos="zoom-in"
       >
-        {/* Gradient border effect */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+        {/* Modern high-intensity glow background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-red-600/30 rounded-full blur-[80px] group-hover:bg-red-500/40 transition-all duration-700"></div>
         
-        {/* Image container */}
-        <div className="relative">
+        {/* Image container with perspective */}
+        <div className="relative z-10 perspective-1000">
           <img
             src={img1}
             alt="Portrait"
-            className="relative rounded-full object-cover border-4 border-white shadow-2xl
-                       w-48 h-48 
-                       sm:w-56 sm:h-56 
-                       md:w-64 md:h-64 
-                       lg:w-80 lg:h-80 
-                       xl:w-96 xl:h-96
-                       transition-transform duration-300 hover:scale-105"
+            className="rounded-[2.5rem] object-cover border-[6px] border-white shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+                       w-64 h-80 
+                       md:w-80 md:h-[450px]
+                       lg:w-96 lg:h-[550px]
+                       transition-all duration-500 group-hover:scale-[1.02] group-hover:-rotate-1"
           />
+          
+          {/* Subtle overlay for depth */}
+          <div className="absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-white/20"></div>
         </div>
+
+        {/* Floating abstract element like in refer.webp */}
+        <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-red-600 rounded-2xl rotate-12 -z-10 blur-xl opacity-50 animate-pulse"></div>
       </div>
     </div>
   );

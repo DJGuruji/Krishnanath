@@ -6,32 +6,26 @@ const SkillCategory = ({ skillSet, index }) => {
   return (
     <div 
       key={index} 
-      className="hover:bg-yellow-900/10 transition-all p-4 rounded-md group relative overflow-hidden"
+      className="glass-card p-6 group relative overflow-hidden transition-all duration-500 hover:border-red-500/30"
       data-aos="fade-up"
-      data-aos-delay={index * 100}
+      data-aos-delay={index * 50}
     >
-      {/* Decorative dot */}
-      <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-yellow-500/5 -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-red-600/5 rounded-full blur-2xl group-hover:bg-red-600/10 transition-all duration-700"></div>
       
-      <h3 className="text-lg font-serif text-yellow-300 mb-2 flex items-center relative">
-        <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-2"></span>
-        <span className="relative">
-          {skillSet.category}
-          <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-yellow-500/0 group-hover:w-full transition-all duration-500 ease-out"></span>
-        </span>
+      <h3 className="text-sm font-black text-white font-outfit mb-6 flex items-center uppercase tracking-widest">
+        <span className="w-8 h-[2px] bg-red-600 mr-4"></span>
+        {skillSet.category}
       </h3>
       
-      <div className="pl-4 border-l-2 border-yellow-700/40 transform group-hover:translate-x-1 transition-transform duration-300">
-        <p className="text-gray-200 leading-relaxed">
-          {skillSet.skills.split(', ').map((skill, i) => (
-            <span 
-              key={i} 
-              className="inline-block mr-2 mb-2 px-2 py-1 bg-yellow-900/10 rounded border border-yellow-700/20 hover:border-yellow-700/40 hover:translate-y-[-2px] transition-all duration-200"
-            >
-              {skill}
-            </span>
-          ))}
-        </p>
+      <div className="flex flex-wrap gap-2">
+        {skillSet.skills.split(', ').map((skill, i) => (
+          <span 
+            key={i} 
+            className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-400 group-hover:text-white group-hover:border-red-500/50 transition-all duration-300"
+          >
+            {skill}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -48,52 +42,37 @@ const SkillDiscription = () => {
 
   const skillCategories = [
     {
-      category: "Backend",
+      category: "Backend Development",
       skills: "Node JS, Express JS, Django, Fast API, Java Spring Boot, Deno JS, Nest JS"
     },
     {
-      category: "Frontend",
-      skills: "HTML5, CSS, Bootstrap, Tailwind CSS, React JS, Angular JS, Zustand, TypeScript, Next JS"
+      category: "Frontend Architecture",
+      skills: "HTML5, CSS, Tailwind CSS, React JS, Next JS, TypeScript, Zustand, Angular JS"
     },
     {
-      category: "Database",
-      skills: "MongoDB, MySQL, PostgreSQL"
+      category: "Database Systems",
+      skills: "MongoDB, MySQL, PostgreSQL, Redis"
     },
     {
-      category: "Cloud Services",
-      skills: "Amazon Web Services (AWS), Docker, Azure"
+      category: "Cloud & DevOps",
+      skills: "AWS, Docker, Azure, CI/CD, Kubernetes"
     },
     {
-      category: "Programming Languages",
-      skills: "C, Java, Python, JavaScript, PHP"
-    },
-    {
-      category: "Version Control",
-      skills: "Git, GitHub"
-    },
-    {
-      category: "Soft Skills",
-      skills: "Teamwork, Problem Solving, Bias For Action, Excel, Word, PowerPoint"
+      category: "Programming",
+      skills: "Python, JavaScript, Java, C++, PHP, Go"
     }
   ];
 
   return (
-    <div 
-      className="border border-yellow-200 bg-gradient-to-b from-gray-900 to-black mt-4 p-6 rounded-lg shadow-lg shadow-yellow-900/20 hover:shadow-yellow-700/30 transition-all duration-300 relative overflow-hidden" 
-      data-aos="fade-up"
-    >
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-yellow-400/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-60 h-60 bg-yellow-400/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl pointer-events-none"></div>
+    <div className="space-y-8">
+      <div className="flex items-center gap-4 mb-10" data-aos="fade-right">
+        <h2 className="text-2xl font-black text-white font-outfit uppercase tracking-tighter">
+          Technical <span className="text-red-600">Proficiencies</span>
+        </h2>
+        <div className="flex-1 h-[1px] bg-white/10"></div>
+      </div>
       
-      <h2 className="text-2xl font-serif text-yellow-200 mb-6 pb-2 border-b border-yellow-700/30 relative">
-        <span className="relative inline-block transform transition-transform duration-300 hover:translate-y-[-2px] cursor-default">
-          Technical Proficiencies
-          <span className="absolute bottom-0 left-0 w-1/4 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-400/0"></span>
-        </span>
-      </h2>
-      
-      <div className="grid gap-5 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((skillSet, index) => (
           <SkillCategory key={index} skillSet={skillSet} index={index} />
         ))}
