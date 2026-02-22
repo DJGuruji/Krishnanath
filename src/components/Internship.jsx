@@ -15,8 +15,8 @@ const InternshipCard = ({ internship, index }) => (
     <div className="flex flex-col md:flex-row justify-between items-start gap-4 mb-8">
       <div>
         <div className="flex items-center gap-3 mb-2">
-          <FaBriefcase className="text-red-600 text-sm" />
-          <h3 className="text-2xl font-black text-white font-outfit uppercase tracking-tighter">
+          <FaBriefcase className="text-red-600 text-sm hover:text-white" />
+          <h3 className="text-2xl font-black text-white font-outfit hover:text-red-600 uppercase tracking-tighter">
             {internship.title}
           </h3>
         </div>
@@ -48,13 +48,23 @@ const InternshipCard = ({ internship, index }) => (
 
 const Internship = () => {
   const internships = [
+        {
+      title: "Lead Full Stack Developer",
+      company: "Indian Institute of Commerce , Lakshya",
+      location: "Kochi, Kerala",
+      locationType: "On SIte",
+      startDate: "January 2026",
+      endDate: "Present",
+      description:
+        " Built in-house web applications to automate internal business workflows, replacing manual processes with scalable systems.Developed the Lakshya Aptitude Test & Scholarship Exam Platform with automated evaluation and reporting, integrated with LSQ CRM for lead and student data sync. Implemented ticketing and complaint management systems to streamline issue tracking, resolution workflows, and operational monitoring"
+        },
     {
-      title: "Software Engineer",
+      title: "Full Stack Developer I",
       company: "Simplita.ai",
       location: "Villupuram, Tamil Nadu",
       locationType: "Hybrid",
       startDate: "April 2025",
-      endDate: "Present",
+      endDate: "January 2026",
       description:
         "Developing AI-driven solutions to enhance business operations and decision-making. My work involves building machine learning models, AI-powered analytics platforms, and automation tools. I have contributed to projects focused on intelligent data processing, predictive analytics, and workflow optimization, helping businesses leverage AI for efficiency and growth.",
     },

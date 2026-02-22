@@ -22,6 +22,17 @@ const HomeRouter = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (dropdown) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [dropdown]);
+
   const menuItems = [
     { name: "Home", path: "/", icon: <FaHome /> },
     { name: "About", path: "/about", icon: <FaUserCircle /> },
@@ -34,13 +45,13 @@ const HomeRouter = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+      <nav className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-500 ${
         scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"
       }`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[10001]">
           <NavLink to="/" className="group">
             <h1 className="text-2xl font-black tracking-tighter font-outfit text-white">
-              KRISHNA<span className="text-red-600 group-hover:text-red-500 transition-colors">NATH</span>
+              KRISHNA<span className="text-red-600 group-hover:text-red-500 transition-colors">NATH</span>&nbsp;S
             </h1>
           </NavLink>
 
@@ -75,8 +86,8 @@ const HomeRouter = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`lg:hidden fixed inset-0 top-[72px] bg-black/95 backdrop-blur-2xl transition-all duration-500 ${
-          dropdown ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        <div className={`lg:hidden fixed inset-0 bg-black/98 backdrop-blur-3xl transition-all duration-500 z-[10000] ${
+          dropdown ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
         }`}>
           <div className="flex flex-col items-center justify-center h-full space-y-8 p-6">
             {menuItems.map((item) => (

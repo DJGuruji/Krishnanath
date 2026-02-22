@@ -39,9 +39,10 @@ const Discription = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[0.9] tracking-tighter"
+              className="text-6xl md:text-7xl lg:text-7xl font-extrabold text-white leading-[0.9] tracking-tighter"
             >
-              KRISHNA <span className="text-red-600">NATH</span>
+              KRISHNA <span className="text-red-600">NATH&nbsp;S</span>
+              
             </motion.h1>
           </div>
 
