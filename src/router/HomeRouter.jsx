@@ -45,9 +45,9 @@ const HomeRouter = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-500 ${
-        scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"
-      }`}>
+      <nav className={`lg:fixed relative top-0 left-0 w-full z-[9999] transition-all duration-500 ${
+        scrolled ? "lg:bg-black/80 lg:backdrop-blur-xl lg:border-b lg:border-white/5 lg:py-4" : "bg-transparent py-6"
+      } ${!scrolled && "lg:py-6"} bg-black lg:bg-transparent`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-[10001]">
           <NavLink to="/" className="group">
             <h1 className="text-2xl font-black tracking-tighter font-outfit text-white">
@@ -107,7 +107,7 @@ const HomeRouter = () => {
         </div>
       </nav>
 
-      <div className="pt-20">
+      <div className="lg:pt-20 pt-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
