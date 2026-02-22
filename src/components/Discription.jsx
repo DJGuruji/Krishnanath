@@ -51,7 +51,7 @@ const Discription = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="flex flex-wrap gap-x-6 gap-y-2 text-zinc-500 font-medium uppercase tracking-widest text-xs lg:text-sm"
           >
-            <span>Indian Institute of Technology, Lakshya</span>
+            <span>Indian Institute of Commerce, Lakshya</span>
             <span className="text-red-600">•</span>
             <span>Lead Full Stack Developer</span>
             <span className="text-red-600">•</span>
